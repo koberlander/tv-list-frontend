@@ -1,10 +1,19 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-class App extends React.Component () {
+
+class App extends Component{
+
+  componentDidMount(){
+    fetch('http://localhost:3000/api/v1/programs', {'Accept': 'application.json', 'Content-Type': 'application/json'})
+    .then(res => res.json())
+    .then(json => console.log(json))
+
+  }
+
   render(){
     return (
       <div className="App">
-        <App />
+        {'Here are some words.'}
       </div>
     )
   }
