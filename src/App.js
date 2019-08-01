@@ -1,29 +1,25 @@
 import React, {Component} from 'react';
+import ProgramInput from './components/programs/ProgramInput'
+import {connect} from 'react-redux'
+import {fetchPrograms} from './actions/fetchPrograms'
 
 
 class App extends Component{
 
-  // HAD HERE TO TEST BACKEND
-  // componentDidMount(){
-  //   fetch('http://localhost:3000/api/v1/programs', {
-  //     method: 'GET',
-  //     headers: {
-  //       'Accept': 'application/json',
-  //       'Content-Type': 'application/json'}
-  //     }
-  //    )
-  //   .then(res => res.json())
-  //   .then(json => console.log(json))
-  //
-  // }
+  componentDidMount(){
+    this.props.fetchPrograms({type: 'FETCH_PROGRAMS', payload: {name: 'Maxwell Dog Variety Hour'}})
+
+  }
 
   render(){
     return (
       <div className="App">
-        {'Here are some words.'}
+
+        <ProgramInput />
       </div>
     )
   }
 }
 
-export default App;
+
+export default connect(null, {fetchPrograms})(App);
