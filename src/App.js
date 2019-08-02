@@ -6,10 +6,6 @@ import {fetchPrograms} from './actions/fetchPrograms'
 
 class App extends Component{
 
-  componentDidMount(){
-    this.props.fetchPrograms({type: 'FETCH_PROGRAMS', payload: {name: 'Maxwell Dog Variety Hour'}})
-
-  }
 
   render(){
     return (
