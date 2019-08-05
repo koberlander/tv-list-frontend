@@ -1,0 +1,153 @@
+html, body {
+  color: rgb(255,255,255) !important;
+  background: #4ABDAC !important;
+}
+
+/* .ui.header {
+  font-family: 'Permanent Marker' !important;
+  font-size: 30px !important;
+  color: rgb(255,255,255) !important;
+  background: #FC4A1A !important
+} */
+
+/* Fix later to auto-adjust by screen size */
+.navbar {
+  font-family: 'Permanent Marker' !important;
+  color: rgb(255,255,255) !important;
+  font-size: 30px !important;
+  background: #FC4A1A !important
+  position: fixed;
+  left: 350px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-img {
+  background: rgb(223,220,227);
+  min-width: 7%;
+  min-height: 50px;
+  padding: 5px;
+  display: inline-block;
+  float: left;
+}
+
+.navbar-title {
+  font-family: 'Permanent Marker';
+  color: rgb(255,255,255) !important;
+  font-size: 50px !important;
+  background: #FC4A1A !important;
+  min-height: 74px;
+  min-width: 76.9%;
+  padding: 10px;
+  display: inline-block;
+  float: left;
+}
+
+.navbar-links {
+  background: #FC4A1A !important;
+  min-width: 10%;
+  min-height: 73px;
+  margin-top: 1px;
+  margin-bottom: 0px;
+  display: inline-block;
+  float: right;
+}
+.nav-a-1 {
+  color: rgb(255,255,255) !important;
+  font-size: 10px;
+}
+
+.nav-a-2 {
+  color: rgb(255,255,255) !important;
+  font-size: 10px;
+}
+
+.nav-a-3 {
+  color: rgb(255,255,255) !important;
+  font-size: 10px;
+}
+
+.form-style-1 {
+	margin:10px auto;
+	max-width: 400px;
+	padding: 20px 12px 10px 20px;
+	font: 13px "Open Sans", sans-serif;
+}
+.form-style-1 li {
+	padding: 0;
+	display: block;
+	list-style: none;
+	margin: 10px 0 0 0;
+}
+
+.form-style-1 label{
+	margin:0 0 3px 0;
+	padding:0px;
+	display:block;
+	font-weight: bold;
+}
+.form-style-1 input[type=text],
+.form-style-1 input[type=date],
+.form-style-1 input[type=datetime],
+.form-style-1 input[type=number],
+.form-style-1 input[type=search],
+.form-style-1 input[type=time],
+.form-style-1 input[type=url],
+.form-style-1 input[type=email],
+textarea,
+select{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border:1px solid #BEBEBE;
+	padding: 7px;
+	margin:0px;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	outline: none;
+}
+.form-style-1 input[type=text]:focus,
+.form-style-1 input[type=date]:focus,
+.form-style-1 input[type=datetime]:focus,
+.form-style-1 input[type=number]:focus,
+.form-style-1 input[type=search]:focus,
+.form-style-1 input[type=time]:focus,
+.form-style-1 input[type=url]:focus,
+.form-style-1 input[type=email]:focus,
+.form-style-1 textarea:focus,
+.form-style-1 select:focus{
+	-moz-box-shadow: 0 0 8px #88D5E9;
+	-webkit-box-shadow: 0 0 8px #88D5E9;
+	box-shadow: 0 0 8px #88D5E9;
+	border: 1px solid #88D5E9;
+}
+.form-style-1 .field-divided{
+	width: 49%;
+}
+
+.form-style-1 .field-long{
+	width: 100%;
+}
+.form-style-1 .field-select{
+	width: 100%;
+}
+.form-style-1 .field-textarea{
+	height: 100px;
+}
+.form-style-1 input[type=submit], .form-style-1 input[type=button]{
+	background: #F7B733;
+	padding: 8px 15px 8px 15px;
+	border: none;
+	color: #fff;
+}
+.form-style-1 input[type=submit]:hover, .form-style-1 input[type=button]:hover{
+	background: #4691A4;
+	box-shadow:none;
+	-moz-box-shadow:none;
+	-webkit-box-shadow:none;
+}
+.form-style-1 .required{
+	color:red;
+}

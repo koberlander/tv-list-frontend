@@ -5,6 +5,7 @@ import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
 import App from './App';
 import programReducer from './reducers/programReducer'
+import 'semantic-ui-css/semantic.min.css'
 
 //Compose allows us to combine more than one middleware.
 //More info: https://redux.js.org/api/compose
