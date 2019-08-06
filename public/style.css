@@ -3,13 +3,6 @@ html, body {
   background: #4ABDAC !important;
 }
 
-/* .ui.header {
-  font-family: 'Permanent Marker' !important;
-  font-size: 30px !important;
-  color: rgb(255,255,255) !important;
-  background: #FC4A1A !important
-} */
-
 /* Fix later to auto-adjust by screen size */
 .navbar {
   font-family: 'Permanent Marker' !important;
@@ -74,7 +67,7 @@ html, body {
 	font: 13px "Open Sans", sans-serif;
 }
 .form-style-1 li {
-	padding: 0;
+	padding: 0; !important
 	display: block;
 	list-style: none;
 	margin: 10px 0 0 0;
@@ -82,7 +75,7 @@ html, body {
 
 .form-style-1 label{
 	margin:0 0 3px 0;
-	padding:0px;
+	padding: 0px;
 	display:block;
 	font-weight: bold;
 }

@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import NavBar from './containers/NavBar'
 import ProgramInput from './components/programs/ProgramInput'
 import {connect} from 'react-redux'
 import {fetchPrograms} from './actions/fetchPrograms'
+import {addProgram} from './actions/addProgram'
 import ProgramsContainer from './containers/ProgramsContainer'
 
 class App extends Component{
@@ -21,4 +22,4 @@ class App extends Component{
 }
 
 
-export default connect(null, {fetchPrograms})(App);
+export default connect(null, {fetchPrograms, addProgram })(App);
