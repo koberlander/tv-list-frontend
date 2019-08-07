@@ -7,7 +7,7 @@ import {fetchPrograms} from '../actions/fetchPrograms'
 class ProgramsContainer extends React.Component {
   //we need our ProgramsContainer to render before we can fetchPrograms from our backend, so we put it inside componentDidMount(). It's also possible to put event listeners here, though I haven't personally done it.
   componentDidMount(){
-    //imported our fetchPrograms action as a prop using connect
+    //imported my fetchPrograms action as a prop using connect
     this.props.fetchPrograms()
   }
 

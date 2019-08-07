@@ -1,30 +1,25 @@
 import React from 'react'
 
 const Program = (props) => {
-  let {program: {url, name, network, image, watchlist}} = props
+  let {program: {url, name, network, image}} = props
   return(
-        <div className='ui column'>
-          <div className='ui card'>
-            <div className="content">
-              <img
-              className="ui rounded image"
-                src={image}
-                alt='o nooo'
-              />
-              <div className="header">{name}</div>
-              <div className="meta">{network}</div>
-              <div className="description">
+        <div>
+            <img className="cardimg" src={image} alt='o noooo'/>
+            <div className="program-info">
+              <div className="name-font">
+                {name}
+              </div>
+              <div className="network-name">
+                {network}
+              </div>
+              <div className='details-link'>
                 <a href={url}>Details</a>
               </div>
-            </div>
-            <div className="extra content">
-              <div className="ui two buttons">
-                <button className="ui green basic button">Watchlist</button>
-                <button className="ui red basic button">Decline</button>
+              <div>
+                <button>Watchlist</button>
               </div>
            </div>
         </div>
-    </div>
   )
 }
 
