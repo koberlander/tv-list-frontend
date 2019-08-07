@@ -1,19 +1,14 @@
 import React, {Component} from 'react'
 import NavBar from './containers/NavBar'
-import ProgramInput from './components/programs/ProgramInput'
-import {connect} from 'react-redux'
-import {fetchPrograms} from './actions/fetchPrograms'
-import {addProgram} from './actions/addProgram'
 import ProgramsContainer from './containers/ProgramsContainer'
 
 class App extends Component{
-
+// we attached app to the DOM in index.js. Here we render the NavBar and ProgramsContainer, using connect to access our async fetchPrograms action
 
   render(){
     return (
       <div className="App">
         <NavBar />
-        <ProgramInput />
         <ProgramsContainer />
         <div>Footer</div>
       </div>
@@ -21,5 +16,4 @@ class App extends Component{
   }
 }
 
-
-export default connect(null, {fetchPrograms, addProgram })(App);
+export default App;

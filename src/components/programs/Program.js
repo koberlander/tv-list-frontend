@@ -1,31 +1,29 @@
 import React from 'react'
 
-// <img src="http://static.tvmaze.com/uploads/images/medium_portrait/193/482599.jpg" />
-
-const Program = () => {
+const Program = (props) => {
+  let {program: {url, name, network, image, watchlist}} = props
   return(
-    <div class="ui centered cards">
-      <div class="ui card">
-        <div class="content">
-          <img
-            src="http://static.tvmaze.com/uploads/images/original_untouched/193/482599.jpg"
-            class="ui rounded image"
-            alt=''
-          />
-          <div class="header">Steve Sanders</div>
-          <div class="meta">Friends of Elliot</div>
-          <div class="description">
-            Steve wants to add you to the group
-            <strong>best friends</strong>
-          </div>
+        <div className='ui column'>
+          <div className='ui card'>
+            <div className="content">
+              <img
+              className="ui rounded image"
+                src={image}
+                alt='o nooo'
+              />
+              <div className="header">{name}</div>
+              <div className="meta">{network}</div>
+              <div className="description">
+                <a href={url}>Details</a>
+              </div>
+            </div>
+            <div className="extra content">
+              <div className="ui two buttons">
+                <button className="ui green basic button">Watchlist</button>
+                <button className="ui red basic button">Decline</button>
+              </div>
+           </div>
         </div>
-        <div class="extra content">
-          <div class="ui two buttons">
-            <button class="ui green basic button">Approve</button>
-            <button class="ui red basic button">Decline</button>
-          </div>
-        </div>
-      </div>
     </div>
   )
 }

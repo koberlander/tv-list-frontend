@@ -19,7 +19,7 @@ class ProgramInput extends React.Component {
     event.preventDefault()
 
     //dispatch our add_program action
-    this.props.addProgram({}) //NEED TO COMPLETE
+
 
     //changed to [event.target.name]: '' because there is more than one filed we're tracking
     this.setState({
@@ -29,7 +29,7 @@ class ProgramInput extends React.Component {
 
   render(){
     return(
-      <form handleSubmit={event => this.handleSubmit(event)}>
+      <form >
           <ul className='form-style-1'>
             <li>
               <label>Main TV Show Page Link</label>

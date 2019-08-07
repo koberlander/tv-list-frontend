@@ -6,7 +6,7 @@ export function fetchPrograms(){
 
       return fetch('http://localhost:3000/api/v1/programs')
         .then(res => res.json())
-        .then(programs => dispatch({type: 'ADD_PROGRAMS', programs}))
+        .then(programs => dispatch({type: 'FETCH_PROGRAMS', payload: programs}))
 
  }
 }

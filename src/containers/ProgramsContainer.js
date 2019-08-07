@@ -1,14 +1,29 @@
 import React from 'react'
-import Program from '../components/programs/Program'
+import Programs from '../components/programs/Programs'
+import ProgramInput from '../components/programs/ProgramInput'
+import {connect} from 'react-redux'
+import {fetchPrograms} from '../actions/fetchPrograms'
 
 class ProgramsContainer extends React.Component {
+  //we need our ProgramsContainer to render before we can fetchPrograms from our backend, so we put it inside componentDidMount(). It's also possible to put event listeners here, though I haven't personally done it.
+  componentDidMount(){
+    //imported our fetchPrograms action as a prop using connect
+    this.props.fetchPrograms()
+  }
+
   render(){
     return(
-      <Program />
+      <div>
+        <ProgramInput />
+        <Programs programs={this.props.programs}/>
+      </div>
     )
   }
 }
 
-// <div>CommentsContainer</div>
+//our programReducer has state = {programs: []} as one of its arguments. Since we moved our actions to their own individual files
+const mapStateToProps = state => {
+  return ({programs: state.programs})
+}
 
-export default ProgramsContainer
+export default connect(mapStateToProps, {fetchPrograms})(ProgramsContainer)
