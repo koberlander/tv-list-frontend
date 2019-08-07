@@ -1,6 +1,3 @@
-//Commented out because Redux dev tools wouldn't work. Should it go elsewhere? Need to research.
-// import 'semantic-ui-css/semantic.min.css'
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore, applyMiddleware, compose} from 'redux'
