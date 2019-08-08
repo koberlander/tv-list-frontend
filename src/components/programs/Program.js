@@ -12,18 +12,24 @@ const Program = (props) => {
                 src={image}
                 alt='o nooo'
               />
-              <div className="header">{name}</div>
+              <div className="header">
+                <a href={url}>{name}</a>
+              </div>
               <div className="meta">{network}</div>
             </div>
-            <div className="extra content">
-              <div className="ui two buttons">
-                <button className="ui green basic button">Watchlist</button>
-                <button src={url} className="ui red basic button">More Details</button>
-              </div>
-           </div>
+            <div className="ui bottom attached button">
+              <i className="add icon"></i>
+              Watchlist
+            </div>
         </div>
     </div>
   )
 }
 
 export default Program
+
+// <div className="extra content">
+//   <div className="ui two buttons">
+//     <button className="ui green basic button">Watchlist</button>
+//   </div>
+// </div>
