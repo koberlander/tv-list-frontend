@@ -10,10 +10,3 @@ export function fetchPrograms(){
 
  }
 }
-
-
-//  headers: {
-//    'Accept': 'application/json',
-//    'Content-Type': 'application/json'}
-//  }
-// )

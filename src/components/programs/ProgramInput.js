@@ -1,14 +1,19 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {addProgram} from '../../actions/addProgram'
+
 
 class ProgramInput extends React.Component {
+  constructor(){
+    super()
 
-  state = {
+    this.state = {
       url: '',
       name: '',
       network: '',
-      image: '',
-      watchlist: false
+      image: ''
     }
+  }
 
 
   handleChange = event => {
@@ -17,19 +22,13 @@ class ProgramInput extends React.Component {
     })
   }
 
-  handleCheckbox = event => {
-    if (event.target.value === !false) {
-
-        //check labs, then dad jokes for this logic
-
-    }
-  }
 
   handleSubmit = event => {
     event.preventDefault()
 
-    //dispatch our add_program action
-
+    //call our addProgram action via props. connect() allows us to do this since we passed in our action as dispatch.
+    //pass in the payload (this.state, our state takes in our form input text in real time) that we receive from the form onSubmit
+    this.props.addProgram(this.state)
 
     //changed to [event.target.name]: '' because there is more than one filed we're tracking
     this.setState({
@@ -40,9 +39,9 @@ class ProgramInput extends React.Component {
   render(){
     return(
         <div className='form div'>
-          <form className="ui form">
+          <form className="ui form" onSubmit={this.handleSubmit}>
             <div className="six width field">
-              <label>Main Show Info Link</label>
+              <label className='form label'>Main Show Info Link</label>
               <input
                 type='text'
                 name='url'
@@ -51,7 +50,7 @@ class ProgramInput extends React.Component {
                 onChange={this.handleChange}/>
             </div>
             <div className="six width field">
-              <label>Show Name</label>
+              <label className='form label'>Show Name</label>
               <input
                 type='text'
                 name='name'
@@ -60,7 +59,7 @@ class ProgramInput extends React.Component {
                 onChange={this.handleChange}/>
             </div>
             <div className="six width field">
-              <label>Network Name</label>
+              <label className='form label'>Network Name</label>
               <input
                 type='text'
                 name='network'
@@ -69,25 +68,13 @@ class ProgramInput extends React.Component {
                 onChange={this.handleChange}/>
             </div>
             <div className="six width field">
-              <label>Image URL</label>
+              <label className='form label'>Image URL</label>
               <input
                 type='text'
                 name='image'
                 placeholder="http://image.png"
                 value={this.state.image}
                 onChange={this.handleChange}/>
-            </div>
-            <div className="six width field">
-              <div className="ui checkbox">
-                  <input
-                  type="checkbox"
-                  className="hidden"
-                  readOnly=""
-                  tabIndex="0"
-                  value={this.state.watchlist}
-                  onChange={this.handleCheckbox}/>
-                <label>Add to Watchlist</label>
-              </div>
             </div>
             <button type="submit" className="ui button">Submit</button>
           </form>
@@ -96,4 +83,4 @@ class ProgramInput extends React.Component {
   }
 }
 
-export default ProgramInput
+export default connect(null, {addProgram})(ProgramInput)

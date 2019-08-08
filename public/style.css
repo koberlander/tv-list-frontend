@@ -67,9 +67,15 @@ html, body {
 }
 
 /* Change default Add New button color */
-.ui.right.aligned.button {
-  background: rgb(252,74,26) !important;
+.ui.right.aligned.button,
+.ui.button {
+  font-family: 'Open Sans' !important;
+  background: rgb(247, 183, 51) !important;
   color: rgba(255,255,255, 0.9) !important;
 }
 
-/* Change form input size from fluid to smaller */
+/* Change form label font and color */
+.form.label {
+  color: rgba(255,255,255, 0.9) !important;
+  font-family: 'Open Sans';
+}

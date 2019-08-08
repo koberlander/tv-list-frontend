@@ -27,9 +27,3 @@ const Program = (props) => {
 }
 
 export default Program
-
-// <div className="extra content">
-//   <div className="ui two buttons">
-//     <button className="ui green basic button">Watchlist</button>
-//   </div>
-// </div>
