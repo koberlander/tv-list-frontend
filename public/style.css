@@ -60,7 +60,19 @@ html, body {
   font-size: 10px;
 }
 
-.form-style-1 {
+/* Add space between Add New btn and cards collection */
+.add.button.div {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+/* Change default Add New button color */
+.ui.right.aligned.button {
+  background: rgb(252,74,26) !important;
+  color: rgb(255,255,255) !important; 
+}
+
+/* .form-style-1 {
 	margin:10px auto;
 	max-width: 400px;
 	padding: 20px 12px 10px 20px;
@@ -143,4 +155,4 @@ select{
 }
 .form-style-1 .required{
 	color:red;
-}
+} */
