@@ -14,15 +14,14 @@ const Programs = (props) => {
 
         <div className='ui six column grid'>
             <div className='row'>
-              {props.programs.map((program) => <Program
-                key={program.id}
+              {props.programs.map((program, index) => <Program
+                key={index}
                 url={program.url}
                 name={program.name}
                 network={program.network}
                 image={program.image}
                 watchlist={program.watchlist}
-                program={program}
-                deleteProgram={props.deleteProgram}/>)}
+                program={program}/>)}
             </div>
         </div>
 

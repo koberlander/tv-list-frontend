@@ -6,16 +6,8 @@ export default function programReducer(state = {programs: []}, action){
     case 'FETCH_PROGRAMS':
       return {programs: action.payload}
 
-    case 'ADD_PROGRAM' :
-
-    const program = {
-      url: action.url,
-      name: action.name,
-      network: action.network,
-      image: action.image
-    }
-
-      return {...state, programs: [...state.programs, program]}
+    case 'ADD_PROGRAM':
+      return {...state, programs: [...state.programs, action.payload]}
 
     default:
     return state

@@ -1,5 +1,5 @@
 import React from 'react'
-//import action? How to perform here without a class func?
+
 
 
 const Program = (props) => {
@@ -9,8 +9,8 @@ const Program = (props) => {
         <div className='ui column'>
           <div className='ui card'>
             <div className="content">
-              <a class="ui right corner label" onClick={props.deleteProgram}>
-                <i aria-hidden="true" class="trash alternate link icon"></i>
+              <a className="ui right corner label">
+                <i aria-hidden="true" className="trash alternate link icon"></i>
               </a>
               <img
               className="ui rounded image"

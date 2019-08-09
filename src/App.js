@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import NavBar from './containers/NavBar'
+import Header from './containers/Header'
 import ProgramsContainer from './containers/ProgramsContainer'
 
 class App extends Component{
@@ -8,7 +8,7 @@ class App extends Component{
   render(){
     return (
       <div className="App">
-        <NavBar />
+        <Header />
         <ProgramsContainer />
         <div>Footer</div>
       </div>
