@@ -74,6 +74,13 @@ html, body {
   color: rgba(255,255,255, 0.9) !important;
 }
 
+/* Change button background color on hover */
+.ui.right.aligned.button:hover,
+.ui.button:hover {
+  background: rgb(255, 183, 51) !important;
+}
+
+
 /* Change form label font and color */
 .form.label {
   color: rgba(255,255,255, 0.9) !important;

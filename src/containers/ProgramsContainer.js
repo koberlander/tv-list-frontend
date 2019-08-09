@@ -15,7 +15,7 @@ class ProgramsContainer extends React.Component {
     return(
       <div>
         <ProgramInput />
-        <Programs programs={this.props.programs}/>
+        <Programs programs={this.props.programs} deleteProgram={this.props.deleteProgram}/>
       </div>
     )
   }
@@ -26,4 +26,4 @@ const mapStateToProps = state => {
   return ({programs: state.programs})
 }
 
-export default connect(mapStateToProps, {fetchPrograms})(ProgramsContainer)
+export default connect(mapStateToProps, {fetchPrograms, deleteProgram})(ProgramsContainer)

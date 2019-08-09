@@ -3,6 +3,8 @@ import Program from './Program'
 
 // Instead of passing all props in an arrow function below, I could just pass an object that contains my programs array. Here I chose to just use props because I'll be manipulating the data a lot.
 const Programs = (props) => {
+// debugger
+
 
   return(
       <div>
@@ -19,7 +21,8 @@ const Programs = (props) => {
                 network={program.network}
                 image={program.image}
                 watchlist={program.watchlist}
-                program={program}/>)}
+                program={program}
+                deleteProgram={props.deleteProgram}/>)}
             </div>
         </div>
 
