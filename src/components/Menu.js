@@ -3,17 +3,17 @@ import React from 'react'
 const Menu = () => {
   return(
     <div className='navbar-links'>
-      <div className="ui borderless menu">
-        <a className="item"><i aria-hidden="true" className="gamepad icon"></i>
-          [HOME]
+
+        <a className='nav-a-1'><i aria-hidden="true" className="home icon"></i>
+          Home
         </a>
-        <a className="item"><i aria-hidden="true" className="gamepad icon"></i>
-          [ABOUT]
+        <a className='nav-a-2'><i aria-hidden="true" className="info circle icon"></i>
+          About
         </a>
-        <a className="item"><i aria-hidden="true" className="gamepad icon"></i>
-          [WATCHLIST]
+        <a className='nav-a-3'><i aria-hidden="true" className="video play icon"></i>
+          Watchlist
         </a>
-      </div>
+
     </div>
   )
 }
