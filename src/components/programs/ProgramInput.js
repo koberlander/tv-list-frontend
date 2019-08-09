@@ -68,11 +68,11 @@ class ProgramInput extends React.Component {
                 onChange={this.handleChange}/>
             </div>
             <div className="six width field">
-              <label className='form label'>Image URL</label>
+              <label className='form label'>Image</label>
               <input
                 type='text'
                 name='image'
-                placeholder="http://image.png"
+                placeholder="image.png"
                 value={this.state.image}
                 onChange={this.handleChange}/>
             </div>

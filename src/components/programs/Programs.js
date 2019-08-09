@@ -14,13 +14,8 @@ const Programs = (props) => {
 
         <div className='ui six column grid'>
             <div className='row'>
-              {props.programs.map((program, index) => <Program
-                key={index}
-                url={program.url}
-                name={program.name}
-                network={program.network}
-                image={program.image}
-                watchlist={program.watchlist}
+              {props.programs.map((program, id) => <Program
+                key={id}
                 program={program}/>)}
             </div>
         </div>
