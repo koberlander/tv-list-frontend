@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {deleteProgram} from '../../actions/deleteProgram'
-import {Card, Image, Icon} from 'semantic-ui-react'
+import {Grid, Card, Image, Icon, Button} from 'semantic-ui-react'
 
 class Program extends React.Component {
 
@@ -10,32 +10,36 @@ class Program extends React.Component {
     this.props.deleteProgram(id)
 
   }
-//figure out how to fix linter errors with <a> tags
+
   render(){
     let {program: {id, url, name, network, image}} = this.props
     // debugger
     // console.log('this.props :', this.props)
 
 
-    //refactor with semantic Card.Group
+    //refactor with semantic Card
     return(
-      <Card>
-        <Image src={image} wrapped ui={false} />
-        <Card.Content>
-          <Card.Header>{name}</Card.Header>
-          <Card.Meta>
-            <span className='date'>{network}</span>
-          </Card.Meta>
-          <Card.Description>
-          </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <a>
-            <Icon name='user' />
-            22 Friends
-          </a>
-        </Card.Content>
-  </Card>
+      <Grid.Column>
+        <Card onClick={(_) => this.handleClick(id)}>
+          <Image src={image} wrapped ui={false} />
+          <Card.Content>
+            <Card.Header>{name}</Card.Header>
+            <Card.Meta>
+              <span className='date'>{network}</span>
+            </Card.Meta>
+            <Card.Description>
+            </Card.Description>
+          </Card.Content>
+          <Button.Group>
+            <Button icon>
+              <Icon color='red' name='heart' />
+            </Button>
+            <Button icon>
+              <Icon name='trash alternate outline' />
+            </Button>
+          </Button.Group>
+        </Card>
+      </Grid.Column>
     )
   }
 }
