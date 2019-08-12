@@ -16,6 +16,8 @@ const store = createStore(programReducer, composeEnhancers(applyMiddleware(thunk
 //Still need to attach react router to access the views in Header/Menu and use a switch statement to see one view at a time.
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
 document.getElementById('root'));

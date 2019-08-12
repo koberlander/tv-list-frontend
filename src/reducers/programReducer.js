@@ -7,7 +7,8 @@ export default function programReducer(state = {programs: []}, action){
       return {programs: action.payload}
 
     case 'ADD_PROGRAM':
-      return {...state, programs: [...state.programs, action.payload]}
+    //updated programs to add new to beginning of array instead of the end
+      return {...state, programs: [action.payload,...state.programs]}
 
     case 'DELETE_PROGRAM':
       const programs = state.programs.filter(program => program.id !== action.id)
