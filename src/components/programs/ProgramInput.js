@@ -32,7 +32,10 @@ class ProgramInput extends React.Component {
 
     //changed to [event.target.name]: '' because there is more than one filed we're tracking
     this.setState({
-      [event.target.name]: ''
+      url: '',
+      name: '',
+      network: '',
+      image: ''
     })
   }
 
