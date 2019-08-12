@@ -36,8 +36,11 @@ html, body {
   float: left;
 }
 
-.navbar-links {
+/* style menu div that holds buttons */
+.menu-div {
   background: #FC4A1A !important;
+  color: rgb(255,255,255) !important;
+  font-size: 10px;
   min-width: 10%;
   min-height: 73px;
   margin-top: 1px;
@@ -45,7 +48,19 @@ html, body {
   display: inline-block;
   float: right;
 }
-.nav-a-1 {
+
+.i.icons {
+  margin: 5px !important;
+  padding: 5px !important
+}
+
+/* style buttons which serve as links */
+/* .ui.right.floated.buttons {
+  background: #FC4A1A !important
+  color: rgb(255,255,255) !important;
+  font-size: 10px;
+} */
+/* .nav-a-1 {
   color: rgb(255,255,255) !important;
   font-size: 10px;
 }
@@ -58,7 +73,7 @@ html, body {
 .nav-a-3 {
   color: rgb(255,255,255) !important;
   font-size: 10px;
-}
+} */
 
 /* Add space between Add New btn and cards collection */
 .add.button.div {

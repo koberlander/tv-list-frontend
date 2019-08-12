@@ -1,27 +1,49 @@
 import React from 'react'
+import {Button, Icon} from 'semantic-ui-react'
 
-const Menu = () => {
-  return(
-    <div className='navbar-links'>
+const Menu = () => (
 
-        <a className='nav-a-1'><i aria-hidden="true" className="home icon"></i>
-          Home
-        </a>
-        <a className='nav-a-2'><i aria-hidden="true" className="info circle icon"></i>
-          About
-        </a>
-        <a className='nav-a-3'><i aria-hidden="true" className="video play icon"></i>
-          Watchlist
-        </a>
-
+    <div className='menu-div'>
+        <Button.Group basic size='small'>
+           <Button>
+             <Icon name='home' />
+             Home
+           </Button>
+           <Button>
+             <Icon name='plus' />
+             Add New
+           </Button>
+           <Button>
+             <Icon name='video' />
+              Watchlist
+           </Button>
+        </Button.Group>
     </div>
-  )
-}
+
+)
 
 export default Menu
 
-// <div className='navbar-links'>
-// <a className='nav-a-1'>[ HOME ] </a>
-// <a className='nav-a-2'> [ ABOUT ] </a>
-// <a className='nav-a-3'> [ WATCHLIST ] </a>
+// <div className='ui right floated buttons'>
+//   <div className='menu-button'>
+//     <button className="small basic ui icon button">
+//       <i aria-hidden="true" className="home icon"></i>
+//         Home
+//     </button>
+//   </div>
+//
+//
+//   <div className='menu-button'>
+//     <button className="small basic ui icon button">
+//       <i aria-hidden="true" className="plus icon"></i>
+//         Add New
+//     </button>
+//   </div>
+//
+//   <div className='menu-button'>
+//     <button className="small basic ui icon button">
+//       <i aria-hidden="true" className="video icon"></i>
+//         Watchlist
+//     </button>
+//   </div>
 // </div>
