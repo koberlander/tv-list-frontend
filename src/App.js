@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Header from './containers/Header'
+import NavBar from './containers/NavBar'
 import ProgramsContainer from './containers/ProgramsContainer'
 import Footer from './components/Footer'
 import {connect} from 'react-redux'
@@ -19,7 +19,7 @@ componentDidMount(){
   render(){
     return (
       <div className="App">
-        <Header />
+        <NavBar />
         <ProgramsContainer programs={this.props.programs}/>
         <Footer />
       </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {deleteProgram} from '../../actions/deleteProgram'
-import {Grid, Card, Image, Icon, Button} from 'semantic-ui-react'
+import {Grid, Card, Image, Button} from 'semantic-ui-react'
 
 class Program extends React.Component {
 
@@ -31,12 +31,9 @@ class Program extends React.Component {
             </Card.Description>
           </Card.Content>
           <Button.Group>
-            <Button icon>
-              <Icon color='red' name='heart' />
-            </Button>
-            <Button icon>
-              <Icon name='trash alternate outline' />
-            </Button>
+            <Button basic icon='pencil alternate' />{' '}
+            <Button basic icon='trash' />
+            <Button basic icon='plus' />
           </Button.Group>
         </Card>
       </Grid.Column>
