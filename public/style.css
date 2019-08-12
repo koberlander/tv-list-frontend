@@ -54,27 +54,6 @@ html, body {
   padding: 5px !important
 }
 
-/* style buttons which serve as links */
-/* .ui.right.floated.buttons {
-  background: #FC4A1A !important
-  color: rgb(255,255,255) !important;
-  font-size: 10px;
-} */
-/* .nav-a-1 {
-  color: rgb(255,255,255) !important;
-  font-size: 10px;
-}
-
-.nav-a-2 {
-  color: rgb(255,255,255) !important;
-  font-size: 10px;
-}
-
-.nav-a-3 {
-  color: rgb(255,255,255) !important;
-  font-size: 10px;
-} */
-
 /* Add space between Add New btn and cards collection */
 .add.button.div {
   margin-top: 10px !important;
