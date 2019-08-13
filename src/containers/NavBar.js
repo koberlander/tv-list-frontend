@@ -9,7 +9,8 @@ import Menu from '../components/Menu'
 const NavBar = () => {
     return(
       <Header as='h1'>
-        <Image src='https://i.imgur.com/P6SbloG.gif' /> TV List <Menu />
+        <Image src='https://i.imgur.com/P6SbloG.gif' /> TV List
+        <Menu />
       </Header>
    )
 }

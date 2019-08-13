@@ -74,6 +74,10 @@ html, body {
   background: rgb(255, 183, 51) !important;
 }
 
+/* Change background color of div card btns are in to yellow */
+.ui.bottom.attached.button {
+  background: rgb(255, 183, 51) !important;
+}
 
 /* Change form label font and color */
 .form.label {

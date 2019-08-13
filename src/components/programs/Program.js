@@ -11,37 +11,40 @@ class Program extends React.Component {
 
   }
 
+/* To access a specific program/:id, 'routerProps' provides 'match.params.id'. So we can use our array of programs to access that specific id as shown below. */
+
   render(){
-    let {program: {id, url, name, network, image}} = this.props
-    // debugger
-    // console.log('this.props :', this.props)
+    let program = this.props.programs[this.props.match.params.id - 1]
 
-
-    //refactor with semantic Card
+    //using ternary in return because I need proggrams array to be populated before rendering any of these cards.
     return(
-      <Grid.Column>
-        <Card onClick={(_) => this.handleClick(id)}>
-          <Image src={image} wrapped ui={false} />
-          <Card.Content>
-            <Card.Header>{name}</Card.Header>
-            <Card.Meta>
-              <span className='date'>{network}</span>
-            </Card.Meta>
-            <Card.Description>
-            </Card.Description>
-          </Card.Content>
-          <Button.Group>
-            <Button basic icon='pencil alternate' />{' '}
-            <Button basic icon='trash' />
-            <Button basic icon='plus' />
-          </Button.Group>
-        </Card>
-      </Grid.Column>
+      {program ? (<Grid.Column>
+          <Card onClick={(_) => this.handleClick(this.props.programs(this.props.match.params.id - 1))}>
+            <Image src={program.image} wrapped ui={false} />
+            <Card.Content>
+              <Card.Header>{program.name}</Card.Header>
+              <Card.Meta>
+                <span className='date'>{program.network}</span>
+              </Card.Meta>
+              <Card.Description>
+                Notes
+              </Card.Description>
+            </Card.Content>
+            <Button.Group attached='bottom' >
+              <Button basic icon='pencil alternate' />
+              <Button basic icon='trash' />
+              <Button basic icon='heart' />
+            </Button.Group>
+          </Card>
+        </Grid.Column>)
+      :
+      null}
     )
   }
 }
 
 export default connect(null, {deleteProgram})(Program)
+
 // <div className='ui column' >
 //   <div className='ui card' onClick={(_) => this.handleClick(id)}>
 //   <div className="content">
