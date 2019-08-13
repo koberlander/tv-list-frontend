@@ -1,6 +1,7 @@
 import React from 'react'
 import Program from './Program'
 import {Grid} from 'semantic-ui-react'
+// import {Link} from 'react-router-dom'
 
 // Instead of passing all props in an arrow function below, I could just pass an object that contains my programs array. Here I chose to just use props because I'll be manipulating the data a lot.
 const Programs = (props) => {

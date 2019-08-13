@@ -3,28 +3,34 @@ import {connect} from 'react-redux'
 import {deleteProgram} from '../../actions/deleteProgram'
 import {Grid, Card, Image, Button} from 'semantic-ui-react'
 
-class Program extends React.Component {
+const Program = (props) => {
 
-  handleClick = (id) => {
+
+  let handleClick = (id) => {
     // debugger
     this.props.deleteProgram(id)
 
   }
 
+//call props.showCard() in the return below instead of a ternary
+  // let showCard = () => {
+  //   if (program) {
+  //     return the card below
+  //   } else {
+  //     null (is the else even needed?)
+  //   }
+  // }
 /* To access a specific program/:id, 'routerProps' provides 'match.params.id'. So we can use our array of programs to access that specific id as shown below. */
 
-  render(){
-    let program = this.props.programs[this.props.match.params.id - 1]
-
-    //using ternary in return because I need proggrams array to be populated before rendering any of these cards.
+    //using ternary in return because I need programs array to be populated before rendering any of these cards.
     return(
-      {program ? (<Grid.Column>
-          <Card onClick={(_) => this.handleClick(this.props.programs(this.props.match.params.id - 1))}>
-            <Image src={program.image} wrapped ui={false} />
+        <Grid.Column>
+          <Card onClick={(_) => this.handleClick()}>
+            <Image src={props.program.image} wrapped ui={false} />
             <Card.Content>
-              <Card.Header>{program.name}</Card.Header>
+              <Card.Header>{props.program.name}</Card.Header>
               <Card.Meta>
-                <span className='date'>{program.network}</span>
+                <span className='date'>{props.program.network}</span>
               </Card.Meta>
               <Card.Description>
                 Notes
@@ -36,11 +42,8 @@ class Program extends React.Component {
               <Button basic icon='heart' />
             </Button.Group>
           </Card>
-        </Grid.Column>)
-      :
-      null}
+        </Grid.Column>
     )
-  }
 }
 
 export default connect(null, {deleteProgram})(Program)

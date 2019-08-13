@@ -1,10 +1,10 @@
 import React from 'react'
 import Programs from '../components/programs/Programs'
 import ProgramInput from '../components/programs/ProgramInput'
-import Watchlist from './Watchlist'
+import Watchlist from '../components/Watchlist'
 import {connect} from 'react-redux'
 import {fetchPrograms} from '../actions/fetchPrograms'
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import Program from '../components/programs/Program'
 
 class ProgramsContainer extends React.Component {
@@ -16,16 +16,20 @@ componentDidMount(){
 }
 
 
-/* Route component renders something as-is. Router can pass down props via routerProps the render method. Render also lets me do a show page for X item, hide a list of all items. See Program.js for how to make a show page, specifically. */
+/* Route component renders something as-is. Router can pass down props via routerProps the render method. Render also lets me do a show page for X item, hide a list of all items. Since I have both /programs and programs/:id routes, I used Switch to avoid confusion and double component rendering. Switch finds the first route that matches my URL. The double renderings occurred because when using 'exact path' with a URL, it returns everything that matches. */
 
 
 
   render(){
     return(
       <div>
-        <Route path='/programs/new' component={ProgramInput} />
-        <Route path='/programs/:id' render={(routerProps) => <Program {...routerProps} programs={this.props.programs} />} />
-        <Route exact path='/programs' render={(routerProps) => <Programs {...routerProps} programs={this.props.programs}/>} />
+        <Switch>
+          <Route path='/programs/new' component={ProgramInput} />
+          <Route path='/programs/:id' render={(props) => {let programId = props.match.params.id
+            return <Program programs={this.props.programs.find(program => program.id === programId)}
+          />}} />
+          <Route path='/programs' render={() => <Programs programs={this.state.programs}/>} />
+        </Switch>
         <Route path='/watchlist' render={() => <Watchlist programs={this.props.programs} />} />
       </div>
     )
@@ -33,7 +37,7 @@ componentDidMount(){
 }
 
 
-// programReducer has state = {programs: []} as one of its arguments. Since we moved our actions to their own individual files
+// programReducer has state = {programs: []} as one of its arguments.
 const mapStateToProps = state => {
   return ({programs: state.programs})
 }
