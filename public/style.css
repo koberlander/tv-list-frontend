@@ -3,26 +3,29 @@ html, body {
   background: #4ABDAC !important;
 }
 
-/* Fix later to auto-adjust by screen size */
-.navbar {
+.ui.stackable.menu {
   font-family: 'Permanent Marker' !important;
   color: rgb(255,255,255) !important;
   font-size: 30px !important;
   background: #FC4A1A !important
-  position: fixed;
+  /* position: fixed;
   left: 350px;
   padding: 0;
-  margin: 0;
+  margin: 0; */
 }
 
-.navbar-img {
+.item.item.1 {
+  background: rgba(223, 220, 227, 1);
+}
+
+/* .menu {
   background: rgb(223,220,227);
   min-width: 7%;
   min-height: 50px;
   padding: 5px;
   display: inline-block;
   float: left;
-}
+} */
 
 .navbar-title {
   font-family: 'Permanent Marker';
@@ -34,19 +37,6 @@ html, body {
   padding: 10px;
   display: inline-block;
   float: left;
-}
-
-/* style menu div that holds buttons */
-.menu-div {
-  background: #FC4A1A !important;
-  color: rgb(255,255,255) !important;
-  font-size: 10px;
-  min-width: 10%;
-  min-height: 73px;
-  margin-top: 1px;
-  margin-bottom: 0px;
-  display: inline-block;
-  float: right;
 }
 
 .i.icons {
@@ -72,15 +62,4 @@ html, body {
 .ui.right.aligned.button:hover,
 .ui.button:hover {
   background: rgb(255, 183, 51) !important;
-}
-
-/* Change background color of div card btns are in to yellow */
-.ui.bottom.attached.button {
-  background: rgb(255, 183, 51) !important;
-}
-
-/* Change form label font and color */
-.form.label {
-  color: rgba(255,255,255, 0.9) !important;
-  font-family: 'Open Sans';
 }

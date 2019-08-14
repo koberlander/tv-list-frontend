@@ -7,7 +7,8 @@ import {Menu} from 'semantic-ui-react'
 const NavBar = () => {
     return(
             <Menu stackable>
-             <Menu.Item >
+             <Menu.Item
+              className='item 1'>
                <img src='https://i.imgur.com/P6SbloG.gif' alt='head gif'/>
              </Menu.Item>
 
@@ -18,18 +19,20 @@ const NavBar = () => {
 
              <Menu.Menu position='right'>
                <Menu.Item
-                 name='home'
-                 href='localhost:3001/programs'>
+                 className='item 2'
+                 name='home'>
                  [Home]
                </Menu.Item>
 
                <Menu.Item
+                className='item 3'
                  name='new'
                  href='localhost:3001/new'>
                  [Add New]
                </Menu.Item>
 
                <Menu.Item
+                className='item 4'
                 name='watchlist'
                 href='localhost:3001/watchlist'>
                  [Watchlist]

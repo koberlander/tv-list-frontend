@@ -5,6 +5,7 @@ import {Grid, Card, Image, Button} from 'semantic-ui-react'
 
 const Program = (props) => {
 
+console.log(props)
 
   let handleClick = (id) => {
     // debugger
@@ -12,6 +13,7 @@ const Program = (props) => {
 
   }
 
+// May do this instead of ternary in the card fields
 //call props.showCard() in the return below instead of a ternary
   // let showCard = () => {
   //   if (program) {
@@ -20,17 +22,21 @@ const Program = (props) => {
   //     null (is the else even needed?)
   //   }
   // }
+
 /* To access a specific program/:id, 'routerProps' provides 'match.params.id'. So we can use our array of programs to access that specific id as shown below. */
+
+  let program = props.programs[props.match.params.id - 1]
+  // console.log(program)
 
     //using ternary in return because I need programs array to be populated before rendering any of these cards.
     return(
         <Grid.Column>
-          <Card onClick={(_) => this.handleClick()}>
-            <Image src={props.program.image} wrapped ui={false} />
+          <Card onClick={(_) => this.handleClick(program.id)}>
+            <Image src={program ? program.image : null} wrapped ui={false} />
             <Card.Content>
-              <Card.Header>{props.program.name}</Card.Header>
+              <Card.Header>{program ? program.name: null}</Card.Header>
               <Card.Meta>
-                <span className='date'>{props.program.network}</span>
+                <span className='date'>{program ? program.network : null}</span>
               </Card.Meta>
               <Card.Description>
                 Notes
