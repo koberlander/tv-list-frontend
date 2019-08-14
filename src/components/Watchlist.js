@@ -1,6 +1,6 @@
 import React from 'react'
 
-// Good idea for how to do Watchlist ternary: https://github.com/seanlucius/find-fido-frontend/blob/master/src/components/HomeContainer.js
+// ternary in card just like in program.js except the truthy statement will be watchlist == false ? null : render card element
 
 const Watchlist = () => {
   return(
