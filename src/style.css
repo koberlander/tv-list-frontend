@@ -45,18 +45,23 @@ html, body {
 }
 
 /* Add space between Add New btn and cards collection */
-.add.button.div {
+.ui.icon.button.btn {
   margin-top: 10px !important;
   margin-bottom: 10px !important;
 }
 
 /* Add background color to card btns */
 .ui.three.buttons {
-  background: rgba(247, 183, 51, 1) !important;
+  background: rgba(230, 184, 52, 1) !important;
 }
 
 /* Add background color to div holding card btns */
 .extra.content {
+  background: rgba(230, 184, 52, 1) !important;
+}
+
+/* Change card btn colors on hover */
+.ui.three.buttons:hover {
   background: rgba(247, 183, 51, 1) !important;
 }
 

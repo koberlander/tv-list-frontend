@@ -6,7 +6,7 @@ import {Menu} from 'semantic-ui-react'
 
 const NavBar = () => {
     return(
-            <Menu stackable>
+            <Menu text stackable>
              <Menu.Item
               className='item 1'>
                <img src='https://i.imgur.com/P6SbloG.gif' alt='head gif'/>

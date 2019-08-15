@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {deleteProgram} from '../../actions/deleteProgram'
-import {Grid, Card, Image, Button} from 'semantic-ui-react'
+import {Grid, Card, Image, Button, Popup} from 'semantic-ui-react'
 
 const Program = (props) => {
 
@@ -30,13 +30,29 @@ let program = props.program ? props.program : props.programs[props.match.params.
               <Card.Meta>
                 <span className='date'>{program ? program.network : null}</span>
               </Card.Meta>
-              
+
             </Card.Content>
             <Card.Content extra>
               <div className='ui three buttons'>
-                <Button basic icon='pencil'></Button>
-                <Button basic icon='trash'></Button>
-                <Button basic icon='heart'></Button>
+
+              <Popup
+                trigger={<Button icon='trash' />}
+                content="Delete this show."
+                size='tiny'
+                basic
+              />
+                <Popup
+                  trigger={<Button icon='heart' />}
+                  content="Add to Watchlist."
+                  size='tiny'
+                  basic
+                />
+                <Popup
+                  trigger={<Button icon='pencil' />}
+                  content="Add a comment."
+                  size='tiny'
+                  basic
+                />
               </div>
             </Card.Content>
           </Card>
