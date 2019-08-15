@@ -50,6 +50,11 @@ html, body {
   margin-bottom: 10px !important;
 }
 
+/* Add background color to div holding card btns */
+.ui.three.buttons {
+  background: rgba(247, 183, 51, 1) !important;
+}
+
 /* Change default Add New button color */
 .ui.right.aligned.button,
 .ui.button {
