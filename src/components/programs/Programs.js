@@ -10,7 +10,7 @@ const Programs = (props) => {
   return(
       <div>
         <div className='add button div'>
-          <button className='ui right aligned button'>Add New</button>
+          <button icon='plus'>Add New</button>
         </div>
 
         <Grid columns='six' divided='vertically'>

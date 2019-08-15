@@ -30,15 +30,13 @@ let program = props.program ? props.program : props.programs[props.match.params.
               <Card.Meta>
                 <span className='date'>{program ? program.network : null}</span>
               </Card.Meta>
-              <Card.Description>
-                Notes
-              </Card.Description>
+              
             </Card.Content>
             <Card.Content extra>
               <div className='ui three buttons'>
                 <Button basic icon='pencil'></Button>
                 <Button basic icon='trash'></Button>
-                <Button basic icon='heart'></Button>  
+                <Button basic icon='heart'></Button>
               </div>
             </Card.Content>
           </Card>

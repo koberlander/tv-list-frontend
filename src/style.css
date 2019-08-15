@@ -50,8 +50,13 @@ html, body {
   margin-bottom: 10px !important;
 }
 
-/* Add background color to div holding card btns */
+/* Add background color to card btns */
 .ui.three.buttons {
+  background: rgba(247, 183, 51, 1) !important;
+}
+
+/* Add background color to div holding card btns */
+.extra.content {
   background: rgba(247, 183, 51, 1) !important;
 }
 

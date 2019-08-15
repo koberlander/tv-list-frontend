@@ -24,7 +24,7 @@ componentDidMount(){
     return(
       <div>
         <Switch>
-          <Route path='/programs/new' component={ProgramInput} />
+          <Route path='/programs/new' render={(routerProps) => <ProgramInput {...routerProps} name={this.props.name}/>}/>
           <Route path='/programs/:id' render={(routerProps) => <Program {...routerProps} programs={this.props.programs}/>}/>
           <Route path='/programs' render={(routerProps) => <Programs {...routerProps} programs={this.props.programs}/>} />
           <Route path='/watchlist' render={(routerProps) => <Watchlist {...routerProps} programs={this.props.programs} />} />

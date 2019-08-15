@@ -4,11 +4,10 @@ import {addProgram} from '../../actions/addProgram'
 import {Form} from 'semantic-ui-react'
 
 class ProgramInput extends React.Component {
-  constructor(){
-    super()
-
+  constructor(props){
+    super(props)
+    console.log(props);
     this.state = {
-      url: '',
       name: '',
       network: '',
       image: ''
@@ -65,4 +64,13 @@ class ProgramInput extends React.Component {
     )
   }
 }
-export default connect(null, {addProgram})(ProgramInput)
+
+let mapStateToProps = (state) => {
+  return ({
+    name: state.name,
+    network: state.network,
+    image: state.image
+  })
+}
+
+export default connect(mapStateToProps, {addProgram})(ProgramInput)
