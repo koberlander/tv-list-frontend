@@ -1,7 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {deleteProgram} from '../../actions/deleteProgram'
 import {Grid, Card, Image, Button, Popup} from 'semantic-ui-react'
+import {deleteProgram} from '../../actions/deleteProgram'
+import CommentsContainer from '../../containers/CommentsContainer'
 
 const Program = (props) => {
 
@@ -13,17 +14,16 @@ const Program = (props) => {
 
   }
 
+console.log(this);
 
 /* To access a specific program/:id, 'routerProps' provides 'match.params.id'. Can use it here to access the id needed by .mapping over my rograms array. */
 // REMEMBER: there are mismatches in program.id and match.params.id because some items have been deleted from the db
 let program = props.program ? props.program : props.programs[props.match.params.id - 1]
+let programId = program.id
 
-  // console.log(program.id)
-
-    //using ternary in return because I need programs array to be populated before rendering any of these cards.
     return(
         <Grid.Column>
-          <Card {let program = let program = props.program ? props.program : props.programs[props.match.params.id - 1] letprogramId = program.id} program.id onClick={(_) => this.handleClick(programId)}>
+          <Card onClick={(_) => this.handleClick(program)}>
             <Image src={program ? program.image : null} wrapped ui={false} />
             <Card.Content>
               <Card.Header>{program ? program.name: null}</Card.Header>
@@ -55,6 +55,7 @@ let program = props.program ? props.program : props.programs[props.match.params.
             </Card.Content>
           </Card>
         </Grid.Column>
+        <CommentsContainer />
     )
 }
 

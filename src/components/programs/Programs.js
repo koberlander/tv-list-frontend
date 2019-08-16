@@ -4,7 +4,7 @@ import {Grid, Button} from 'semantic-ui-react'
 
 // Instead of passing all props in an arrow function below, I could just pass an object that contains my programs array. Here I chose to just use props because I'll be manipulating the data a lot.
 const Programs = (props) => {
-debugger
+// debugger
 
 
   return(
@@ -14,7 +14,7 @@ debugger
         </div>
         <Grid columns='six' divided='vertically'>
           <Grid.Row >
-              {props.programs.map((program) => <Program key={program.id} program={program} dispatch={this.props.dispatch}/>)}
+              {props.programs.map((program) => <Program key={program.id} program={program} dispatch={props.dispatch}/>)}
           </Grid.Row>
         </Grid>
 
