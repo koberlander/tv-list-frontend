@@ -1,15 +1,15 @@
 
-export const deleteProgram = (id) => {
-  // console.log('id: ', id)
+export const deleteProgram = (programId) => {
+  console.log('programId: ', programId)
 
 
   return (dispatch) => {
-    fetch(`http://localhost:3000/api/v1/programs/${id}`,{
+    fetch(`http://localhost:3000/api/v1/programs/${programId}`,{
       method: 'DELETE',
       headers: {'Content-Type': 'application/json'}
     })
     .then(res => res.json())
-    .then(res => dispatch({type: 'DELETE_PROGRAM', id: id}))
+    .then(res => dispatch({type: 'DELETE_PROGRAM', id: programId}))
   }
 }
 

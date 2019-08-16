@@ -14,7 +14,7 @@ const Programs = (props) => {
         </div>
         <Grid columns='six' divided='vertically'>
           <Grid.Row >
-              {props.programs.map((program) => <Program key={program.id} program={program} dispatch={props.dispatch}/>)}
+              {props.programs.map((program) => <Program key={program.id} program={program} />)}
           </Grid.Row>
         </Grid>
 
