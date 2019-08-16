@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import style from './style.css'
+import './style.css'
+import 'semantic-ui-css/semantic.min.css'
 import {createStore, applyMiddleware, compose} from 'redux'
 import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
 import {BrowserRouter as Router} from 'react-router-dom'
-import 'semantic-ui-css/semantic.min.css'
 import App from './App';
 import programReducer from './reducers/programReducer'
 

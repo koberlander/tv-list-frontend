@@ -7,27 +7,24 @@ import {Menu} from 'semantic-ui-react'
 const NavBar = () => {
     return(
             <Menu text stackable>
-             <Menu.Item
-              className='item 1'>
-               <img src='https://i.imgur.com/P6SbloG.gif' alt='head gif'/>
-             </Menu.Item>
-
+              <div className='img div' >
+               <Menu.Item
+                className='item 1'>
+                 <img className='header gif' src='https://i.imgur.com/P6SbloG.gif' alt='head gif'/>
+               </Menu.Item>
+             </div>
              <Menu.Item
                name='tv list'>
-               <h1>TV List</h1>
+               <h1 className='tv list'>TV List</h1>
              </Menu.Item>
 
              <Menu.Menu position='right'>
+                <Menu.Item
+                  className='item 2'>
+                  [Home]
+                </Menu.Item>
                <Menu.Item
-                 className='item 2'
-                 name='home'>
-                 [Home]
-               </Menu.Item>
-
-               <Menu.Item
-                className='item 3'
-                 name='new'
-                 href='localhost:3001/new'>
+                className='item 3'>
                  [Add New]
                </Menu.Item>
 

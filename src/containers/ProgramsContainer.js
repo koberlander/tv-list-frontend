@@ -5,6 +5,7 @@ import Watchlist from '../components/Watchlist'
 import Program from '../components/programs/Program'
 import {connect} from 'react-redux'
 import {fetchPrograms} from '../actions/fetchPrograms'
+import {deleteProgram} from '../actions/deleteProgram'
 import {Route, Switch} from 'react-router-dom'
 
 class ProgramsContainer extends React.Component {
@@ -24,10 +25,11 @@ componentDidMount(){
     return(
       <div>
         <Switch>
-          <Route path='/programs/new' render={(routerProps) => <ProgramInput {...routerProps} name={this.props.name}/>}/>
+          <Route exact path="/" render={(routerProps) => <Programs {...routerProps} programs={this.props.programs}/>} /> />
+          <Route exact path='/programs' render={(routerProps) => <Programs {...routerProps} programs={this.props.programs} deleteProgram={this.props.program}/>} />
+          <Route path='/programs/new' render={() => <ProgramInput />}/>
           <Route path='/programs/:id' render={(routerProps) => <Program {...routerProps} programs={this.props.programs}/>}/>
-          <Route path='/programs' render={(routerProps) => <Programs {...routerProps} programs={this.props.programs}/>} />
-          <Route path='/watchlist' render={(routerProps) => <Watchlist {...routerProps} programs={this.props.programs} />} />
+          <Route exact path='/watchlist' render={(routerProps) => <Watchlist {...routerProps} programs={this.props.programs} />} />
         </Switch>
       </div>
     )

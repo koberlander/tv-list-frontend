@@ -6,7 +6,6 @@ import {Form} from 'semantic-ui-react'
 class ProgramInput extends React.Component {
   constructor(props){
     super(props)
-    console.log(props);
     this.state = {
       name: '',
       network: '',
@@ -44,17 +43,20 @@ class ProgramInput extends React.Component {
                 <Form.Input
                   fluid
                   label='Name'
+                  name='name'
                   value={this.state.name}
                   onChange={this.handleChange}
                   width={6} />
                 <Form.Input
                   fluid
+                  name='network'
                   label='Network'
                   value={this.state.network}
                   onChange={this.handleChange}
                   width={6} />
                 <Form.Input
                   fluid
+                  name='image'
                   label='Image Link'
                   value={this.state.image}
                   onChange={this.handleChange}
@@ -65,12 +67,4 @@ class ProgramInput extends React.Component {
   }
 }
 
-let mapStateToProps = (state) => {
-  return ({
-    name: state.name,
-    network: state.network,
-    image: state.image
-  })
-}
-
-export default connect(mapStateToProps, {addProgram})(ProgramInput)
+export default connect(null, {addProgram})(ProgramInput)
