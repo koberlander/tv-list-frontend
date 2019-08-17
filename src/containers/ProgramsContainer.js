@@ -5,7 +5,6 @@ import Watchlist from '../components/Watchlist'
 import Program from '../components/programs/Program'
 import {connect} from 'react-redux'
 import {fetchPrograms} from '../actions/fetchPrograms'
-import {deleteProgram} from '../actions/deleteProgram'
 import {Route, Switch} from 'react-router-dom'
 
 class ProgramsContainer extends React.Component {

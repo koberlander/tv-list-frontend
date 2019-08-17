@@ -1,13 +1,14 @@
 import React from 'react'
 import CommentInput from '../components/comments/CommentInput'
+import Comments from '../components/comments/Comments'
 
-//render in my Program.js
 class TransactionsContainer extends React.Component {
   render(){
     return(
       <div>
         This CommentsContainer holds the CommentInput component.
         <CommentInput />
+        <Comments />
       </div>
     )
   }
