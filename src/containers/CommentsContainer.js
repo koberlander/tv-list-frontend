@@ -6,7 +6,7 @@ class TransactionsContainer extends React.Component {
   render(){
     return(
       <div>
-        This CommentsContainer holds the CommentInput component.
+        This CommentsContainer holds the CommentInput and Comments component.
         <CommentInput />
         <Comments />
       </div>

@@ -2,8 +2,9 @@
 export const deleteProgram = (programId) => {
   console.log('programId: ', programId)
 
-
   return (dispatch) => {
+    dispatch({type: 'START_DELETE_PROGRAM_REQUEST'})
+    
     fetch(`http://localhost:3000/api/v1/programs/${programId}`,{
       method: 'DELETE',
       headers: {'Content-Type': 'application/json'}

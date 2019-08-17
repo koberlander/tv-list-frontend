@@ -10,8 +10,14 @@ class Program extends React.Component {
     this.props.deleteProgram(programId)
   }
 
+  //where do I update the toggle on button from active/not active?
   handleWatchlist = (programId) => {
-    this.props.handleHeart(programId)
+    this.props.toggleHeart(programId)
+
+    // check if this is the proper way to input the value
+    this.setState({
+      watchlist: !state.watchlist
+    })
   }
 
 
@@ -41,10 +47,13 @@ class Program extends React.Component {
                     size='tiny'
                   />
                   <Popup
-                    trigger={<Button onClick={(_) => this.handleHeart(programId)} icon='heart' />}
+                    trigger={
+                      <Button
+                        toggle active={active}
+                        onClick={(_) => this.handleWatchlist(programId)} icon='heart'
+                      />}
                     content="Add to Watchlist."
                     size='tiny'
-
                   />
                   <Popup
                     trigger={<Button icon='comment alternate outline' />}
@@ -61,4 +70,8 @@ class Program extends React.Component {
     }
 }
 
-export default connect(null, {deleteProgram})(Program)
+  mapStateToProps = (state) => {
+    return {watchlist: state.watchlist}
+  }
+
+export default connect(mapStateToProps, {deleteProgram})(Program)

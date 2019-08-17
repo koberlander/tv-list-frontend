@@ -14,7 +14,7 @@ export default function programReducer(state = {programs: []}, action){
       const programs = state.programs.filter(program => program.id !== action.id)
       return {programs}
 
-    case 'HANDLE_HEART':
+    case 'TOGGLE_HEART':
     //update the program's state so that watchlist: true
       return
 
