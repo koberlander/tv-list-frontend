@@ -1,5 +1,6 @@
 export function toggleWatchlist(programId, watchlistValue){
   console.log('programId: ', programId)
+  console.log('watchlistValue: ', watchlistValue)
 
   return (dispatch) => {
     dispatch({type: 'START_TOGGLE_WATCHLIST_REQUEST'})

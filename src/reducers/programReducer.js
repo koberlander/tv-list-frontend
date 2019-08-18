@@ -17,7 +17,7 @@ export default function programReducer(state = {programs: []}, action){
     case 'TOGGLE_WATCHLIST':
     // first find the particular program that needs to be updated (the id)
     //need to find out how to find properties of action in dev tools or console.log
-
+    console.log('inside TOGGLE_WATCHLIST');
     let programArrayIndex = state.programs.findIndex(program => program.id === action.id)
 
     //make a copy of state and update watchlist value of a specific program
