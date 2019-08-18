@@ -4,7 +4,6 @@ import {Grid, Button} from 'semantic-ui-react'
 
 // Instead of passing all props in an arrow function below, I could just pass an object that contains my programs array. Here I chose to just use props because I'll be manipulating the data a lot.
 const Programs = (props) => {
-// debugger
 
 
   return(

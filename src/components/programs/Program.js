@@ -2,35 +2,39 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Grid, Card, Image, Button, Popup} from 'semantic-ui-react'
 import {deleteProgram} from '../../actions/deleteProgram'
+import {toggleWatchlist} from '../../actions/toggleWatchlist'
 // import CommentsContainer from '../../containers/CommentsContainer'
 
 class Program extends React.Component {
 
   handleDelete = (programId) => {
+
     this.props.deleteProgram(programId)
   }
 
-  //where do I update the toggle on button from active/not active?
-  handleWatchlist = (programId) => {
-    this.props.toggleHeart(programId)
+  //where do I update the toggle on button from active/not active? active is a boolean property on the btn. When set to true, the btn color is green. When set to false, it is yellow.
 
-    // check if this is the proper way to input the value
-    this.setState({
-      watchlist: !state.watchlist
-    })
+  handleWatchlist = (programId, watchlistValue) => {
+
+    this.props.toggleWatchlist(programId, watchlistValue)
+
   }
 
 
     render(){
-      /* To access a specific program/:id, 'routerProps' provides 'match.params.id'. Can use it here to access the id needed by .mapping over my rograms array. */
       // REMEMBER: there are mismatches in program.id and match.params.id because some items have been deleted from the db
+      // QUESTION: Is there a more succinct way to determine program and programId than with the ternaries I have here (inside a componentDidMount) or are they better inside my render method since my card needs access to these variables?
+
       let program = this.props.program ? this.props.program : this.props.programs[this.props.match.params.id - 1]
-      let programId = this.props.program.id
+
+      let programId = this.props.program ? this.props.program.id : null
+
+      let watchlistValue = this.props.program ? this.props.program.watchlist : null
 
 
       return(
           <Grid.Column>
-            <Card >
+            <Card onClick={(_) => {}}>
               <Image src={program ? program.image : null} wrapped ui={false} />
               <Card.Content>
                 <Card.Header>{program ? program.name: null}</Card.Header>
@@ -42,15 +46,15 @@ class Program extends React.Component {
               <Card.Content extra>
                 <div className='ui three buttons'>
                   <Popup
-                    trigger={<Button onClick={(_) => this.handleDelete(programId)} icon='trash' />}
+                    trigger={<Button onClick={(_) => {this.handleDelete(programId)}} icon='trash' />}
                     content="Delete this show."
                     size='tiny'
                   />
                   <Popup
                     trigger={
                       <Button
-                        toggle active={active}
-                        onClick={(_) => this.handleWatchlist(programId)} icon='heart'
+                        toggle active={watchlistValue}
+                        onClick={(_) => this.handleWatchlist(programId, watchlistValue)} icon='heart'
                       />}
                     content="Add to Watchlist."
                     size='tiny'
@@ -70,8 +74,9 @@ class Program extends React.Component {
     }
 }
 
-  mapStateToProps = (state) => {
-    return {watchlist: state.watchlist}
-  }
+  // make sure watchlist status will show in details page
+ // const mapStateToProps = (state) => {
+ //    return { watchlist: state.watchlist }
+ // }
 
-export default connect(mapStateToProps, {deleteProgram})(Program)
+export default connect(null, {deleteProgram, toggleWatchlist})(Program)
