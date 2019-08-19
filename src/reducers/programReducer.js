@@ -16,9 +16,12 @@ export default function programReducer(state = {programs: []}, action){
 
     case 'TOGGLE_WATCHLIST':
     // first find the particular program that needs to be updated (the id)
-    //need to find out how to find properties of action in dev tools or console.log
-    console.log('inside TOGGLE_WATCHLIST');
-     return {}
+    console.log('inside TOGGLE_WATCHLIST case');
+
+    const toggledProgram = state.programs.map(program => program.id === action.programId)
+    //check if whole program is coming in
+    //update only  the show that I changed?
+     return {programs: [...state.programs, toggledProgram]}
 
     default:
     return state
