@@ -12,11 +12,11 @@ export function toggleWatchlist(programId, watchlistValue){
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        watchlist: watchlistValue
+        watchlist: !watchlistValue
       })
     })
     .then(res => res.json())
-    .then(res => dispatch({type: 'TOGGLE_WATCHLIST', id: programId, watchlist: watchlistValue}))
+    .then(res => dispatch({type: 'TOGGLE_WATCHLIST', id: programId, watchlist: !watchlistValue}))
 
   }
 }

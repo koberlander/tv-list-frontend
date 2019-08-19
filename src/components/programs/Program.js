@@ -15,7 +15,7 @@ class Program extends React.Component {
   //where do I update the toggle on button from active/not active? active is a boolean property on the btn. When set to true, the btn color is green. When set to false, it is yellow.
 
   handleWatchlist = (programId, watchlistValue) => {
-
+    
     this.props.toggleWatchlist(programId, watchlistValue)
 
   }
