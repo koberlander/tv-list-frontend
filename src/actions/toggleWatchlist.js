@@ -2,6 +2,8 @@ export function toggleWatchlist(programId, watchlistValue){
   console.log('programId: ', programId)
   console.log('watchlistValue: ', watchlistValue)
 
+  // debugger
+
   return (dispatch) => {
     dispatch({type: 'START_TOGGLE_WATCHLIST_REQUEST'})
 
@@ -16,7 +18,7 @@ export function toggleWatchlist(programId, watchlistValue){
       })
     })
     .then(res => res.json())
-    .then(res => dispatch({type: 'TOGGLE_WATCHLIST', id: programId, watchlist: !watchlistValue}))
+    .then(res => dispatch({type: 'TOGGLE_WATCHLIST', id: programId}))
 
   }
 }

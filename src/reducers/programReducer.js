@@ -15,13 +15,19 @@ export default function programReducer(state = {programs: []}, action){
       return {programs}
 
     case 'TOGGLE_WATCHLIST':
-    // first find the particular program that needs to be updated (the id)
-    console.log('inside TOGGLE_WATCHLIST case');
 
-    const toggledProgram = state.programs.map(program => program.id === action.programId)
-    //check if whole program is coming in
-    //update only  the show that I changed?
-     return {programs: [...state.programs, toggledProgram]}
+    console.log('inside TOGGLE_WATCHLIST case');
+    console.log("use debugger to figure out what your 'payload' is here (or whatever you are passing in)");
+
+    /* Make a deep copy of our current state by using JSON.stringify to turn our array of programs into a string. After we have created the stringifiedPrograms, we then use JSON.parse to turn it back into a brand new array of objects.
+      We then take our copyOfPrograms and find the specific program that we want to update (here we find it by id). After isolating that program, we update the value of watchlist. Then we return a copy of state, with the program ke set to our copyOfPrograms array of objects. Updating my programToBeToggled watchlist value still updates it in the copyOfPrograms array. */
+    let stringifiedPrograms = JSON.stringify(state.programs)
+    let copyOfPrograms = JSON.parse(stringifiedPrograms)
+    let programToBeToggled = copyOfPrograms.find(program => program.id === action.id)
+    // debugger
+    programToBeToggled.watchlist = !action.watchlist
+
+    return {...state, programs: copyOfPrograms}
 
     default:
     return state
