@@ -1,6 +1,6 @@
 import React from 'react'
 import Program from './Program'
-import {Grid, Button} from 'semantic-ui-react'
+import {Grid, Button, Popup} from 'semantic-ui-react'
 
 
 const Programs = (props) => {
@@ -8,7 +8,11 @@ const Programs = (props) => {
   return(
       <div>
         <div className='add btn div'>
-          <Button icon='plus'></Button>
+          <Popup
+            trigger={<Button icon='plus' />}
+            content="Add more shows."
+            size='tiny'
+          />
         </div>
         <Grid columns='six' divided='vertically'>
           <Grid.Row >

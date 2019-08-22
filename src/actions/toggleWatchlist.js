@@ -1,6 +1,6 @@
 export function toggleWatchlist(programId, watchlistValue){
-  console.log('programId: ', programId)
-  console.log('watchlistValue: ', watchlistValue)
+  // console.log('programId: ', programId)
+  // console.log('watchlistValue: ', watchlistValue)
 
   // debugger
 

@@ -14,21 +14,36 @@ export default function programReducer(state = {programs: []}, action){
       const programs = state.programs.filter(program => program.id !== action.id)
       return {programs}
 
-    case 'TOGGLE_WATCHLIST':
+      case 'TOGGLE_WATCHLIST':
 
-    console.log('inside TOGGLE_WATCHLIST case');
-    console.log("use debugger to figure out what your 'payload' is here (or whatever you are passing in)");
+          /*
+              Make a deep copy of the current state by using JSON.stringify to turn my array of programs into a string.
+              After creating stringifiedPrograms, we then use JSON.parse to turn it back into a brand new array of objects.
+              Then, take the copyOfPrograms and find the specific program that we want to update (here we find it by id).
+              After isolating that program, we update the value of watchlist so that each time the button is clicked, it will change the watchlist value.
+              Then, return a copy of state, with the program key set to the copyOfPrograms array of objects.
+              Updating my programToBeToggled watchlist value still updates it in the copyOfPrograms array.
+          */
+          // console.log('state.programs:');
+          // console.log(state.programs);
 
-    /* Make a deep copy of our current state by using JSON.stringify to turn our array of programs into a string. After we have created the stringifiedPrograms, we then use JSON.parse to turn it back into a brand new array of objects.
-      We then take our copyOfPrograms and find the specific program that we want to update (here we find it by id). After isolating that program, we update the value of watchlist. Then we return a copy of state, with the program ke set to our copyOfPrograms array of objects. Updating my programToBeToggled watchlist value still updates it in the copyOfPrograms array. */
-    let stringifiedPrograms = JSON.stringify(state.programs)
-    let copyOfPrograms = JSON.parse(stringifiedPrograms)
-    let programToBeToggled = copyOfPrograms.find(program => program.id === action.id)
-    // debugger
-    programToBeToggled.watchlist = !action.watchlist
+          let stringifiedPrograms = JSON.stringify(state.programs);
+          console.log('stringifiedPrograms: ', stringifiedPrograms);
 
-    return {...state, programs: copyOfPrograms}
+          let copyOfPrograms = JSON.parse(stringifiedPrograms);
+          console.log('copyOfPrograms: ', copyOfPrograms);
 
+          //this updated code using .findIndex allowed me to manually change the watchlist boolean value fixed the issue I had in Program.js which only let me update the item 1x vs each time the button was clicked.
+          let programIndex = copyOfPrograms.findIndex(program => program.id === action.id);
+          copyOfPrograms[programIndex].watchlist = !copyOfPrograms[programIndex].watchlist;
+          console.log('copyOfPrograms after toggle switcheroo: ', copyOfPrograms);
+
+          //commented out the code below because I decided to use findIndex. In the code below, I was finding an object which I toggled the watchlist value of, but it did not update that value each time the toggle was clicked, just the one time.
+          // let programToBeToggled = copyOfPrograms.find(program => program.id === action.id)
+          // // // debugger
+          // programToBeToggled.watchlist = !action.watchlist
+
+          return {...state, programs: copyOfPrograms};
     default:
     return state
 

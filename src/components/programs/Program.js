@@ -6,6 +6,14 @@ import {toggleWatchlist} from '../../actions/toggleWatchlist'
 // import CommentsContainer from '../../containers/CommentsContainer'
 
 class Program extends React.Component {
+  // constructor(){
+  //   super()
+  //
+  //   this.state = {
+  //     active: '',
+  //     prevStateOfActive: ''
+  //   }
+  // }
 
   handleDelete = (programId) => {
 
@@ -17,6 +25,9 @@ class Program extends React.Component {
 
     this.props.toggleWatchlist(programId, watchlistValue)
 
+    //update value of toggle button prop called active
+    // this.setState(prevState => ({ active: !prevState.active }))
+
   }
 
 
@@ -27,7 +38,9 @@ class Program extends React.Component {
 
       let programId = this.props.program ? this.props.program.id : null
 
+      //this needs to be updated if you want to be able to toggle watchlist. Right now can only update one time in reducer
       let watchlistValue = this.props.program ? this.props.program.watchlist : null
+      // debugger
 
 
       return(
@@ -51,7 +64,8 @@ class Program extends React.Component {
                   <Popup
                     trigger={
                       <Button
-                        toggle active={watchlistValue}
+                        toggle
+                        active={watchlistValue}
                         onClick={(_) => this.handleWatchlist(programId, watchlistValue)} icon='heart'
                       />}
                     content="Add to Watchlist."
@@ -71,10 +85,5 @@ class Program extends React.Component {
       )
     }
 }
-
-  // make sure watchlist status will show in details page
- // const mapStateToProps = (state) => {
- //    return { watchlist: state.watchlist }
- // }
 
 export default connect(null, {deleteProgram, toggleWatchlist})(Program)
