@@ -1,6 +1,7 @@
 import React from 'react'
 import Program from './Program'
 import {Grid, Button, Popup} from 'semantic-ui-react'
+import {Link} from 'react-router-dom'
 
 
 const Programs = (props) => {
@@ -9,7 +10,7 @@ const Programs = (props) => {
       <div>
         <div className='add btn div'>
           <Popup
-            trigger={<Button icon='plus' />}
+            trigger={<Button icon='plus' as={Link} to='/programs/new' />}
             content="Add more shows."
             size='tiny'
           />

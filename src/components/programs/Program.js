@@ -6,14 +6,6 @@ import {toggleWatchlist} from '../../actions/toggleWatchlist'
 // import CommentsContainer from '../../containers/CommentsContainer'
 
 class Program extends React.Component {
-  // constructor(){
-  //   super()
-  //
-  //   this.state = {
-  //     active: '',
-  //     prevStateOfActive: ''
-  //   }
-  // }
 
   handleDelete = (programId) => {
 
@@ -25,9 +17,6 @@ class Program extends React.Component {
 
     this.props.toggleWatchlist(programId, watchlistValue)
 
-    //update value of toggle button prop called active
-    // this.setState(prevState => ({ active: !prevState.active }))
-
   }
 
 
@@ -38,7 +27,6 @@ class Program extends React.Component {
 
       let programId = this.props.program ? this.props.program.id : null
 
-      //this needs to be updated if you want to be able to toggle watchlist. Right now can only update one time in reducer
       let watchlistValue = this.props.program ? this.props.program.watchlist : null
       // debugger
 
@@ -75,7 +63,6 @@ class Program extends React.Component {
                     trigger={<Button icon='comment alternate outline' />}
                     content="Add a comment."
                     size='tiny'
-
                   />
                 </div>
               </Card.Content>

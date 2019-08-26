@@ -24,9 +24,9 @@ componentDidMount(){
     return(
       <div>
         <Switch>
-          <Route exact path="/" render={(routerProps) => <Programs {...routerProps} programs={this.props.programs}/>} /> />
+          <Route exact path='/' render={(routerProps) => <Programs {...routerProps} programs={this.props.programs}/>} /> />
           <Route exact path='/programs' render={(routerProps) => <Programs {...routerProps} programs={this.props.programs} />} />
-          <Route path='/programs/new' render={() => <ProgramInput />}/>
+          <Route path='/programs/new' render={(routerProps) => <ProgramInput {...routerProps}/>}/>
           <Route path='/programs/:id' render={(routerProps) => <Program {...routerProps} programs={this.props.programs}/>}/>
           <Route exact path='/watchlist' render={(routerProps) => <Watchlist {...routerProps} programs={this.props.programs} />} />
         </Switch>
