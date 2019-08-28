@@ -33,7 +33,8 @@ class Program extends React.Component {
     render(){
       //refactor to something more sucinct?
       let program = this.props.program ? this.props.program : this.props.programs[this.props.match.params.id - 1]
-
+      // let program = this.props.program ? this.props.program.filter(program => program.id === this.props.match.params.id) : null
+      // console.log(program)
       let programId = this.props.program ? this.props.program.id : null
 
       let watchlistValue = this.props.program ? this.props.program.watchlist : null
