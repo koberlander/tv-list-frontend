@@ -5,7 +5,10 @@ class CommentInput extends React.Component {
 
   }
   render(){
-    return('CommentInput Form goes here.')
+    return(
+            <div>
+            </div>
+    )
   }
 }
 

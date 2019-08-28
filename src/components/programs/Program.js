@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import {connect} from 'react-redux'
 import {Grid, Card, Image, Button, Popup} from 'semantic-ui-react'
 import {deleteProgram} from '../../actions/deleteProgram'
 import {toggleWatchlist} from '../../actions/toggleWatchlist'
-// import CommentsContainer from '../../containers/CommentsContainer'
+import {Link} from 'react-router-dom'
+import CommentsContainer from '../../containers/CommentsContainer'
 
 class Program extends React.Component {
 
@@ -21,8 +22,7 @@ class Program extends React.Component {
 
 
     render(){
-      // QUESTION: Is there a more succinct way to determine program and programId than with the ternaries I have here (inside a componentDidMount) or are they better inside my render method since my card needs access to these variables?
-
+      //refactor to something more sucinct
       let program = this.props.program ? this.props.program : this.props.programs[this.props.match.params.id - 1]
 
       let programId = this.props.program ? this.props.program.id : null
@@ -32,6 +32,7 @@ class Program extends React.Component {
 
 
       return(
+        <Fragment>
           <Grid.Column>
             <Card onClick={(_) => {}}>
               <Image src={program ? program.image : null} wrapped ui={false} />
@@ -40,10 +41,14 @@ class Program extends React.Component {
                 <Card.Meta>
                   <span className='date'>{program ? program.network : null}</span>
                 </Card.Meta>
-
+                <Card.Description>
+                  <Link to={`/programs/${programId - 1}`}>
+                    More...
+                  </Link>
+                </Card.Description>
               </Card.Content>
               <Card.Content extra>
-                <div className='ui three buttons'>
+                <div className='ui two buttons'>
                   <Popup
                     trigger={<Button onClick={(_) => {this.handleDelete(programId)}} icon='trash' />}
                     content="Delete this show."
@@ -59,18 +64,24 @@ class Program extends React.Component {
                     content="Add to Watchlist."
                     size='tiny'
                   />
-                  <Popup
-                    trigger={<Button icon='comment alternate outline' />}
-                    content="Add a comment."
-                    size='tiny'
-                  />
                 </div>
               </Card.Content>
             </Card>
           </Grid.Column>
 
+          <CommentsContainer />
+
+        </Fragment>
       )
     }
 }
 
 export default connect(null, {deleteProgram, toggleWatchlist})(Program)
+
+//
+// <Popup
+// trigger={<Button icon='comment alternate outline' link='true' />}
+// content="Add a comment."
+// size='tiny'
+// />
+// </Link>
