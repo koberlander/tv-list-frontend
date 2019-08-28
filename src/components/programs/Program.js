@@ -7,6 +7,16 @@ import CommentsContainer from '../../containers/CommentsContainer'
 
 class Program extends React.Component {
 
+  renderCards = () => {
+    //write a func with cards ternaries here
+    // let program = this.props.program ? this.props.program : this.props.programs[this.props.match.params.id - 1]
+    // let programId = this.props.program ? this.props.program.id : null
+    // let watchlistValue = this.props.program ? this.props.program.watchlist : null
+
+    //call func in render below
+    // {this.renderCards()}
+  }
+
   handleDelete = (programId) => {
 
     this.props.deleteProgram(programId)
@@ -21,7 +31,7 @@ class Program extends React.Component {
 
 
     render(){
-      //refactor to something more sucinct
+      //refactor to something more sucinct?
       let program = this.props.program ? this.props.program : this.props.programs[this.props.match.params.id - 1]
 
       let programId = this.props.program ? this.props.program.id : null
@@ -38,7 +48,7 @@ class Program extends React.Component {
               <Card.Content>
                 <Card.Header>{program ? program.name: null}</Card.Header>
                 <Card.Meta>
-                  <span className='date'>{program ? program.network : null}</span>
+                  <span>{program ? program.network : null}</span>
                 </Card.Meta>
                 <Card.Description as='a' href={`/programs/${programId - 1}`}>
 
