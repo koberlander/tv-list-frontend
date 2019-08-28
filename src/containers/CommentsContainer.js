@@ -7,7 +7,7 @@ class TransactionsContainer extends React.Component {
     return(
       <div>
         <CommentInput />
-        <Comments />
+        <Comments comments={this.props.program && this.props.program.comments}/>
       </div>
     )
   }

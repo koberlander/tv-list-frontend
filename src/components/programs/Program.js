@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import {Grid, Card, Image, Button, Popup} from 'semantic-ui-react'
 import {deleteProgram} from '../../actions/deleteProgram'
 import {toggleWatchlist} from '../../actions/toggleWatchlist'
-import {Link} from 'react-router-dom'
 import CommentsContainer from '../../containers/CommentsContainer'
 
 class Program extends React.Component {
@@ -30,21 +29,21 @@ class Program extends React.Component {
       let watchlistValue = this.props.program ? this.props.program.watchlist : null
       // debugger
 
-
+      //Link caused nested a tag error, so used as on Card and Card.Description
       return(
         <Fragment>
           <Grid.Column>
-            <Card onClick={(_) => {}}>
+            <Card as='div' onClick={(_) => {}}>
               <Image src={program ? program.image : null} wrapped ui={false} />
               <Card.Content>
                 <Card.Header>{program ? program.name: null}</Card.Header>
                 <Card.Meta>
                   <span className='date'>{program ? program.network : null}</span>
                 </Card.Meta>
-                <Card.Description>
-                  <Link to={`/programs/${programId - 1}`}>
+                <Card.Description as='a' href={`/programs/${programId - 1}`}>
+
                     More...
-                  </Link>
+
                 </Card.Description>
               </Card.Content>
               <Card.Content extra>
@@ -69,7 +68,7 @@ class Program extends React.Component {
             </Card>
           </Grid.Column>
 
-          <CommentsContainer />
+          <CommentsContainer program={program}/>
 
         </Fragment>
       )
@@ -77,11 +76,3 @@ class Program extends React.Component {
 }
 
 export default connect(null, {deleteProgram, toggleWatchlist})(Program)
-
-//
-// <Popup
-// trigger={<Button icon='comment alternate outline' link='true' />}
-// content="Add a comment."
-// size='tiny'
-// />
-// </Link>
