@@ -31,27 +31,25 @@ class Program extends React.Component {
 
 
     render(){
-      //refactor to something more sucinct?
-      let program = this.props.program ? this.props.program : this.props.programs[this.props.match.params.id - 1]
-      // let program = this.props.program ? this.props.program.filter(program => program.id === this.props.match.params.id) : null
-      // console.log(program)
-      let programId = this.props.program ? this.props.program.id : null
 
-      let watchlistValue = this.props.program ? this.props.program.watchlist : null
-      // debugger
+      let program = this.props.program ? this.props.program : this.props.programs.find(program => parseInt(program.id) === parseInt(this.props.match.params.id))
 
-      //Link caused nested a tag error, so used as on Card and Card.Description
+      let programId = program ? program.id : ''
+
+      let watchlistValue = program ? program.watchlist : null
+
+      //Link caused nested 'a' tag error, so used as on Card and Card.Description
       return(
         <Fragment>
           <Grid.Column>
-            <Card as='div' onClick={(_) => {}}>
+            <Card as='div'>
               <Image src={program ? program.image : null} wrapped ui={false} />
               <Card.Content>
                 <Card.Header>{program ? program.name: null}</Card.Header>
                 <Card.Meta>
                   <span>{program ? program.network : null}</span>
                 </Card.Meta>
-                <Card.Description as='a' href={`/programs/${programId - 1}`}>
+                <Card.Description as='a' href={`/programs/${programId}`}>
 
                     More...
 

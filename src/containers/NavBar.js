@@ -21,7 +21,7 @@ const NavBar = () => {
                <h1 className='tv list'>TV List</h1>
              </Menu.Item>
 
-             <Menu.Menu position='right'>
+             <Menu.Menu position='right' >
                 <Menu.Item
                   className='item 2'
                   as={Link}

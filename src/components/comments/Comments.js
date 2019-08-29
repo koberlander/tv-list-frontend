@@ -1,10 +1,17 @@
 import React from 'react'
+import {Comment} from 'semantic-ui-react'
+import CommentCard from './CommentCard'
 
-const Comments = () => {
+const Comments = (props) => {
+  // console.log(props.comments && props.comments.map(comment => console.log(comment))
   return(
-    <div>
+    <Comment.Group>
 
-    </div>
+
+      {props.comments && props.comments.map(comment => <CommentCard key={comment.id} comment={comment}/>)}
+
+
+    </Comment.Group>
   )
 }
 
