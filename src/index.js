@@ -8,6 +8,7 @@ import thunk from 'redux-thunk'
 import {BrowserRouter as Router} from 'react-router-dom'
 import App from './App';
 import programReducer from './reducers/programReducer'
+// import combineReducers from './reducers/combineReducers'
 
 //Compose allows me to combine more than one middleware.
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

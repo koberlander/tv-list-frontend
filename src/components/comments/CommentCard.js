@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react'
-import {Comment, Form, Button, Header} from 'semantic-ui-react'
+import {Comment, Header} from 'semantic-ui-react'
+import CommentInput from './CommentInput'
 
 const CommentCard = (props) => {
 
@@ -23,10 +24,7 @@ const CommentCard = (props) => {
           </Comment.Content>
         </Comment>
 
-        <Form reply>
-          <Form.TextArea />
-          <Button content='Add Reply' labelPosition='left' icon='edit' primary />
-        </Form>
+        <CommentInput />
       </Fragment>
     )
 }
