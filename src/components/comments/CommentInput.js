@@ -2,60 +2,91 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Form, Button, Radio} from 'semantic-ui-react'
 
-const CommentInput = (props) => {
-//add hook to handle state?
-    return(
-      <br>/<br>
-      <br></br>
-      <Form >
-        <Form.Field>
-          Filler title text:
-        </Form.Field>
+class CommentInput extends React.Component {
 
-        <Form.Field>
-          <Radio
-          label='Avatar 1'
-          name='radioGroup'
-          value='this'
-          />
-        </Form.Field>
-        <Form.Field>
-          <Radio
-          label='Avatar 2'
-          name='radioGroup'
-          value='that'
-          />
-        </Form.Field>
-        <Form.Field>
-          <Radio
-          label='Avatar 3'
-          name='radioGroup'
-          value='the other thing'
-          />
-        </Form.Field>
-
-        <Form.Input label='Author Name'/>
-
-        <Form.TextArea label='Comment'/>
-
-        <Button content='Add Reply' labelPosition='left' icon='edit' primary />
-      </Form>
-    )
+  state = {
+    avatarChoice: '',
+    author: '',
+    text: ''
   }
 
-  // Choose an avatar: {/*<b>{this.state.value}</b>*/}
+  renderAvatarChoice = () => {
+    // if elseif else for avatar render choices
+  }
 
-  //First avatar
-  // checked={{/* this.state.value === 'this'*/}}
-  // onChange={{/*this.handleChange*/}}
+  handleChange = () => {
+    // locate and update author and text via setState
 
-  // 2nd avatar
-  // checked={{/* this.state.value === 'that'*/}}
-  // onChange={{/*this.handleChange*/}}
 
-  // checked={{/* this.state.value === 'that'*/}}
-  // onChange={{/*this.handleChange*/}}
-  // />
-  // </Form.Field>
+  }
+
+    render(){
+      return(
+        <Form>
+          <Form.Field>
+            Filler title text:
+          </Form.Field>
+
+          <Form.Field>
+            <Radio
+            label='Avatar 1'
+            name='radioGroup'
+            value={this.state.avatarChoice}
+            checked={this.state.value === 'avatar1'}
+            onChange={this.handleChange}
+            />
+          </Form.Field>
+          <Form.Field>
+            <Radio
+            label='Avatar 2'
+            name='radioGroup'
+            value='that'
+            />
+          </Form.Field>
+          <Form.Field>
+            <Radio
+            label='Avatar 3'
+            name='radioGroup'
+            value='the other thing'/>
+          </Form.Field>
+
+          <Form.Input
+            type='text'
+            label='Author Name'
+            name='author'
+            value='this.state.author'/>
+
+          <Form.TextArea
+            type='text'
+            label='Comment'
+            name='text'
+            value='this.state.text'/>
+
+          <Button
+            content='Add Reply'
+            labelPosition='left'
+            icon='edit'
+            primary />
+        </Form>
+      )
+    }
+  }
+
+
+
 
 export default connect(null)(CommentInput)
+
+
+// Choose an avatar: {/*<b>{this.state.value}</b>*/}
+
+//First avatar
+checked={{/* this.state.value === 'avatar1'*/}}
+onChange={{/*this.handleChange*/}}
+
+// 2nd avatar
+// checked={{/* this.state.value === 'avatar2'*/}}
+// onChange={{/*this.handleChange*/}}
+
+// checked={{/* this.state.value === 'avatar3'*/}}
+// onChange={{/*this.handleChange*/}}
