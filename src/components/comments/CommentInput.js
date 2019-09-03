@@ -5,7 +5,11 @@ import {Form, Button, Radio} from 'semantic-ui-react'
 class CommentInput extends React.Component {
 
   state = {
-    avatarChoice: '',
+    avatarChoice: {
+      avatar1: '',
+      avatar2: '',
+      avatar3: ''
+    },
     author: '',
     text: ''
   }
@@ -15,7 +19,10 @@ class CommentInput extends React.Component {
   }
 
   handleChange = () => {
-    // locate and update author and text via setState
+    debugger
+    this.setState({
+
+    })
 
 
   }
@@ -31,7 +38,7 @@ class CommentInput extends React.Component {
             <Radio
             label='Avatar 1'
             name='radioGroup'
-            value={this.state.avatarChoice}
+            value={this.state.avatarChoice.avatar1}
             checked={this.state.value === 'avatar1'}
             onChange={this.handleChange}
             />
@@ -40,14 +47,16 @@ class CommentInput extends React.Component {
             <Radio
             label='Avatar 2'
             name='radioGroup'
-            value='that'
+            value={this.state.avatarChoice}
+            checked={this.state.value === 'avatar2'}
             />
           </Form.Field>
           <Form.Field>
             <Radio
             label='Avatar 3'
             name='radioGroup'
-            value='the other thing'/>
+            value={this.state.avatarChoice}
+            checked={this.state.value === 'avatar3'}/>
           </Form.Field>
 
           <Form.Input

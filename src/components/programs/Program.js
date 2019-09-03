@@ -7,7 +7,7 @@ import CommentsContainer from '../../containers/CommentsContainer'
 
 class Program extends React.Component {
 
-  componentDidMount(){
+  renderCards = () => {
     //write a func with cards ternaries here
     // let program = this.props.program ? this.props.program : this.props.programs[this.props.match.params.id - 1]
     // let programId = this.props.program ? this.props.program.id : null
@@ -33,7 +33,7 @@ class Program extends React.Component {
     render(){
       // console.log(this.props.program)
 
-      debugger
+      // debugger
 
       let program = this.props.program ? this.props.program : this.props.programs.find(program => parseInt(program.id) === parseInt(this.props.match.params.id))
 
