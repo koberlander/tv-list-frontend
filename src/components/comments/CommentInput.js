@@ -81,8 +81,8 @@ export default connect(null)(CommentInput)
 // Choose an avatar: {/*<b>{this.state.value}</b>*/}
 
 //First avatar
-checked={{/* this.state.value === 'avatar1'*/}}
-onChange={{/*this.handleChange*/}}
+// checked={{/* this.state.value === 'avatar1'*/}}
+// onChange={{/*this.handleChange*/}}
 
 // 2nd avatar
 // checked={{/* this.state.value === 'avatar2'*/}}
