@@ -80,7 +80,7 @@ class Program extends React.Component {
             </Card>
           </Grid.Column>
 
-          {this.props.match.url !== 'localhost:3000/programs' ? <CommentsContainer program={program}/> : null}
+          {this.props.match.url !== '/programs' && this.props.match.url !== '/'? <CommentsContainer program={program}/> : null}
 
         </Fragment>
       )
