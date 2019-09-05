@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 
 const Programs = (props) => {
-console.log(props.match)
+// console.log(props.match)
 
 
   return(

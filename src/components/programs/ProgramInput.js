@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {addProgram} from '../../actions/addProgram'
+import {addProgram} from '../../actions/programs/addProgram'
 import {Form} from 'semantic-ui-react'
 import {Redirect} from 'react-router'
 

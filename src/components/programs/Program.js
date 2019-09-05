@@ -1,8 +1,8 @@
 import React, {Fragment} from 'react'
 import {connect} from 'react-redux'
 import {Grid, Card, Image, Button, Popup} from 'semantic-ui-react'
-import {deleteProgram} from '../../actions/deleteProgram'
-import {toggleWatchlist} from '../../actions/toggleWatchlist'
+import {deleteProgram} from '../../actions/programs/deleteProgram'
+import {toggleWatchlist} from '../../actions/programs/toggleWatchlist'
 import CommentsContainer from '../../containers/CommentsContainer'
 
 class Program extends React.Component {

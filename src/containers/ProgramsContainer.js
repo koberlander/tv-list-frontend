@@ -4,7 +4,7 @@ import ProgramInput from '../components/programs/ProgramInput'
 // import Watchlist from '../components/Watchlist'
 import Program from '../components/programs/Program'
 import {connect} from 'react-redux'
-import {fetchPrograms} from '../actions/fetchPrograms'
+import {fetchPrograms} from '../actions/programs/fetchPrograms'
 import {Route, Switch} from 'react-router-dom'
 
 class ProgramsContainer extends React.Component {
