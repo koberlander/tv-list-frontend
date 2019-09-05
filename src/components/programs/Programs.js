@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 
 
 const Programs = (props) => {
-// console.log(props.programs.map((program) => console.log(program.name)))
+console.log(props.match)
 
 
   return(
@@ -19,7 +19,7 @@ const Programs = (props) => {
         </div>
         <Grid columns='six' divided='vertically'>
             <Grid.Row >
-              {props.programs && props.programs.map((program) => <Program key={program.name} program={program} />)}
+              {props.programs && props.programs.map((program) => <Program key={program.name} program={program} match={props.match}/>)}
             </Grid.Row>
         </Grid>
     </div>

@@ -31,7 +31,7 @@ class Program extends React.Component {
 
 
     render(){
-      // console.log(this.props.program)
+      // console.log(this.props)
 
       // debugger
 
@@ -80,7 +80,7 @@ class Program extends React.Component {
             </Card>
           </Grid.Column>
 
-          <CommentsContainer program={program}/>
+          {this.props.match.url !== 'localhost:3000/programs' ? <CommentsContainer program={program}/> : null}
 
         </Fragment>
       )

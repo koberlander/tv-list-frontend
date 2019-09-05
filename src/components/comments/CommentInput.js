@@ -16,9 +16,10 @@ class CommentInput extends React.Component {
 
   renderAvatarChoice = () => {
     // if elseif else for avatar render choices
+    // import images here
   }
 
-  handleChange = () => {
+  handleChange = (even) => {
     debugger
     this.setState({
 
@@ -47,7 +48,7 @@ class CommentInput extends React.Component {
             <Radio
             label='Avatar 2'
             name='radioGroup'
-            value={this.state.avatarChoice}
+            value={this.state.avatarChoice.avatar2}
             checked={this.state.value === 'avatar2'}
             />
           </Form.Field>
@@ -55,7 +56,7 @@ class CommentInput extends React.Component {
             <Radio
             label='Avatar 3'
             name='radioGroup'
-            value={this.state.avatarChoice}
+            value={this.state.avatarChoice.avatar3}
             checked={this.state.value === 'avatar3'}/>
           </Form.Field>
 
