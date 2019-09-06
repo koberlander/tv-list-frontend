@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {Form, Button, Dropdown} from 'semantic-ui-react'
+import Emojis from '../../picEmojis'
 
 class CommentInput extends React.Component {
 
@@ -20,11 +21,12 @@ class CommentInput extends React.Component {
 
     render(){
       return(
-        <Form>
+        <Form className='comment'>
           <Dropdown
             placeholder='Choose an Avatar'
+            clearable
             selection
-            options=''
+            options={Emojis}
           />
           <Form.Input
             type='text'

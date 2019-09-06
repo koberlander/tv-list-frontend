@@ -59,3 +59,14 @@ html, body {
   font-size: 9px !important;
   border-radius: 0px !important
 }
+
+/* Add space between comment and comment form */
+.comment {
+  margin-bottom: 10px !important;
+}
+
+/* Add more space between Program card and CommentCard */
+.ui.comments {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}

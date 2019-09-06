@@ -22,6 +22,13 @@ const Programs = (props) => {
               {props.programs && props.programs.map((program) => <Program key={program.name} program={program} match={props.match}/>)}
             </Grid.Row>
         </Grid>
+        <div>
+        <Popup
+          trigger={<Button icon='plus' as={Link} to='/programs/:id/comments/new' />}
+          content='Add a comment.'
+          size='tiny'
+         />
+        </div>
     </div>
   )
 }

@@ -1,10 +1,12 @@
-import React from 'react'
-import {Comment} from 'semantic-ui-react'
+import React, {Fragment} from 'react'
 import CommentCard from './CommentCard'
+
+import {Comment} from 'semantic-ui-react'
 
 const Comments = (props) => {
   // console.log(props.comments && props.comments.map(comment => console.log(comment))
   return(
+    <Fragment>
     <Comment.Group>
 
 
@@ -12,6 +14,8 @@ const Comments = (props) => {
 
 
     </Comment.Group>
+
+    </Fragment>
   )
 }
 

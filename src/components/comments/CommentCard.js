@@ -11,7 +11,7 @@ const CommentCard = (props) => {
         </Header>
 
         <Comment>
-          <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
+          <Comment.Avatar src='https://emojis.slackmojis.com/emojis/images/1450319455/129/hypnotoad.gif?1450319455' />
           <Comment.Content>
             <Comment.Author as='a'>Alex</Comment.Author>
             <Comment.Metadata>
@@ -19,7 +19,7 @@ const CommentCard = (props) => {
             </Comment.Metadata>
             <Comment.Text>This show is great!</Comment.Text>
             <Comment.Actions>
-              <Comment.Action>Reply</Comment.Action>
+              
             </Comment.Actions>
           </Comment.Content>
         </Comment>
