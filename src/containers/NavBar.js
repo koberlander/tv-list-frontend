@@ -9,37 +9,35 @@ const NavBar = () => {
     return(
             <Menu text stackable>
               <div className='img div' >
-               <Menu.Item
-                className='item 1'>
+
                  <img className='header gif' src='https://i.imgur.com/P6SbloG.gif' alt='head gif'/>
-               </Menu.Item>
+
              </div>
              <Menu.Item
-               name='tv list'
                as={Link}
                to='/'>
                <h1 className='tv list'>TV List</h1>
              </Menu.Item>
 
-             <Menu.Menu position='right' >
+             <Menu.Menu position='right'>
                 <Menu.Item
                   className='item 2'
                   as={Link}
                   to='/'>
-                    [Home]
+                    Home
                 </Menu.Item>
                <Menu.Item
                 className='item 3'
                 as={Link}
                 to='/programs/new'>
-                 [Add New]
+                 Add New
                </Menu.Item>
 
                <Menu.Item
                 className='item 4'
                 as={Link}
                 to='/watchlist'>
-                 [Watchlist]
+                 Watchlist
                </Menu.Item>
               </Menu.Menu>
             </Menu>

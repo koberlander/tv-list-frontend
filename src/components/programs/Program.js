@@ -41,7 +41,9 @@ class Program extends React.Component {
 
       let watchlistValue = program ? program.watchlist : null
 
-      //Link caused nested 'a' tag error, so used 'as' on Card and Card.Description
+      /* 1) Link caused nested 'a' tag error, so used 'as' on Card and Card.Description.
+         2) Implemented a ternary for CommentsContainer that checked routerProps (this.props.match specifically) since the it was rendering comments on the '/programs' and '/' routes */
+
       return(
         <Fragment>
           <Grid.Column>

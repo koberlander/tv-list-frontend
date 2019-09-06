@@ -5,9 +5,10 @@ html, body {
 
 .ui.stackable.menu {
   font-family: 'Permanent Marker' !important;
+  font-size: 9px;
+  color: rgb(255,255,255) !important;
   background: #FC4A1A !important;
   margin-top: 0px !important;
-  margin-bottom: 30px !important
 }
 
 /* Gray background for NavBar gif */
@@ -19,22 +20,13 @@ html, body {
 .tv.list {
   font-family: 'Permanent Marker' !important;
   color: rgb(255,255,255) !important;
-  font-size: 30px !important;
-  margin-bottom: 50px !important;
-}
-
-.div.right.menu {
-  color: rgb(255,255,255) !important;
-  margin-top: 5px !important;
-  margin-bottom: 50px !important;
 }
 
 .navbar-title {
   font-family: 'Permanent Marker';
   color: rgb(255,255,255) !important;
-  font-size: 50px !important;
   background: #FC4A1A !important;
-  padding: 10px;
+
 }
 
 /* Add space between Add New btn and cards collection */
@@ -60,4 +52,10 @@ html, body {
 .ui.right.aligned.button:hover,
 .ui.button:hover {
   background: rgb(255, 183, 51) !important;
+}
+
+/* Footer background color */
+.footer {
+  font-size: 9px !important;
+  border-radius: 0px !important
 }
