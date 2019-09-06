@@ -1,18 +1,18 @@
 
-export default function programReducer(state = {programs: []}, action){
+export default function programReducer(state = [], action){
 //this takes the action object we have dispatched and updates the state in some way
 
   switch (action.type) {
     case 'FETCH_PROGRAMS':
-      return {programs: action.payload}
+      return action.payload
 
     case 'ADD_PROGRAM':
     //will update method so that program comes at the top of the list, not the bottom. Need to research because putting action.payload first has the program returning null.
-      return {...state, programs: [...state.programs, action.payload]}
+      return [...state, action.payload]
 
     case 'DELETE_PROGRAM':
-      const programs = state.programs.filter(program => program.id !== action.id)
-      return {programs}
+      const programs = state.filter(program => program.id !== action.id)
+      return programs
 
     case 'TOGGLE_WATCHLIST':
 
@@ -27,7 +27,7 @@ export default function programReducer(state = {programs: []}, action){
         // console.log('state.programs:');
         // console.log(state.programs);
 
-      let stringifiedPrograms = JSON.stringify(state.programs)
+      let stringifiedPrograms = JSON.stringify(state)
       console.log('stringifiedPrograms: ', stringifiedPrograms)
 
       let copyOfPrograms = JSON.parse(stringifiedPrograms)
@@ -43,7 +43,7 @@ export default function programReducer(state = {programs: []}, action){
       // // // debugger
       // programToBeToggled.watchlist = !action.watchlist
 
-      return {...state, programs: copyOfPrograms}
+      return copyOfPrograms
 
     default:
     return state
