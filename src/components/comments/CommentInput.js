@@ -1,7 +1,9 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Form, Button, Dropdown} from 'semantic-ui-react'
-import Emojis from '../../picEmojis'
+import addComment from '../../actions/comments/addComment'
+
+import {Form, Button} from 'semantic-ui-react'
+
 
 class CommentInput extends React.Component {
 
@@ -11,34 +13,46 @@ class CommentInput extends React.Component {
   }
 
   handleChange = (event) => {
-    // debugger
     this.setState({
-
+      [event.target.name]: [event.target.value]
     })
+  }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
 
+    this.props.addComment(this.state, this.props.program.id)
+
+    this.setState({
+      author: '',
+      text: ''
+    })
   }
 
     render(){
       return(
-        <Form className='comment'>
-          <Dropdown
-            placeholder='Choose an Avatar'
-            clearable
-            selection
-            options={Emojis}
-          />
+        <Form className='comment' onSubmit={this.handleSubmit}>
           <Form.Input
             type='text'
             label='Name'
+            width={6}
+            required
+            placeholder='Required'
             name='author'
-            value='this.state.author'/>
+            value={this.state.author}
+            onChange={this.handleChange}
+            />
 
-          <Form.TextArea
+          <Form.Input
             type='text'
             label='Comment'
+            width={6}
+            required
+            placeholder='Required'
             name='text'
-            value='this.state.text'/>
+            value={this.state.text}
+            onChange={this.handleChange}
+            />
 
           <Button
             content='Add Reply'
@@ -53,30 +67,13 @@ class CommentInput extends React.Component {
 
 
 
-export default connect(null)(CommentInput)
+export default connect(null, {addComment})(CommentInput)
 
 
-// <Form.Field>
-//   <Radio
-//   label='Avatar 1'
-//   name='radioGroup'
-//   value={this.state.avatarChoice.avatar1}
-//   checked={this.state.value === 'avatar1'}
-//   onChange={this.handleChange}
-//   />
-// </Form.Field>
-// <Form.Field>
-//   <Radio
-//   label='Avatar 2'
-//   name='radioGroup'
-//   value={this.state.avatarChoice.avatar2}
-//   checked={this.state.value === 'avatar2'}
-//   />
-// </Form.Field>
-// <Form.Field>
-//   <Radio
-//   label='Avatar 3'
-//   name='radioGroup'
-//   value={this.state.avatarChoice.avatar3}
-//   checked={this.state.value === 'avatar3'}/>
-// </Form.Field>
+// <Dropdown
+//   placeholder='Choose an Avatar'
+//   clearable
+//   selection
+//   options={Emojis}
+//   width={6}
+// />

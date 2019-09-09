@@ -1,5 +1,5 @@
 
-export default function programReducer(state = [], action){
+export default function programReducer(state = {}, action){
 //this takes the action object we have dispatched and updates the state in some way
 
   switch (action.type) {

@@ -1,16 +1,7 @@
 import React, {Fragment} from 'react'
 import {Comment, Header} from 'semantic-ui-react'
-import CommentInput from './CommentInput'
 
 const CommentCard = (props) => {
-let magic = () => {
-  Date.now()
-}
-function prettyDate2(magic) {
-    let dateWithoutSecond = new Date();
-    dateWithoutSecond.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
-}
-
 
     return(
       <Fragment>
@@ -23,7 +14,7 @@ function prettyDate2(magic) {
           <Comment.Content>
             <Comment.Author as='a'>Alex</Comment.Author>
             <Comment.Metadata>
-              <div>Today at {prettyDate2(magic)}</div>
+              <div>Today at 12:00 PM</div>
             </Comment.Metadata>
             <Comment.Text>This show is great!</Comment.Text>
             <Comment.Actions>
@@ -32,9 +23,16 @@ function prettyDate2(magic) {
           </Comment.Content>
         </Comment>
 
-        <CommentInput />
       </Fragment>
     )
 }
 
 export default CommentCard
+
+// let magic = () => {
+//   Date.now()
+// }
+// function prettyDate2(magic) {
+//     let dateWithoutSecond = new Date();
+//     dateWithoutSecond.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
+// }

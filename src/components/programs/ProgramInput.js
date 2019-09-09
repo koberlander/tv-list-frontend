@@ -58,12 +58,16 @@ class ProgramInput extends React.Component {
                   fluid
                   label='Name'
                   name='name'
+                  required
+                  placeholder='Required'
                   value={this.state.name}
                   onChange={this.handleChange}
                   width={6} />
                 <Form.Input
                   fluid
                   name='network'
+                  required
+                  placeholder='Required'
                   label='Network'
                   value={this.state.network}
                   onChange={this.handleChange}
@@ -72,6 +76,8 @@ class ProgramInput extends React.Component {
                   fluid
                   name='image'
                   label='Image Link'
+                  required
+                  placeholder='Required'
                   value={this.state.image}
                   onChange={this.handleChange}
                   width={8} />

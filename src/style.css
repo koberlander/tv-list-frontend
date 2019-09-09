@@ -47,6 +47,11 @@ html, body {
   margin-bottom: 10px !important;
 }
 
+/* Add space between add comment btn and CommentsContainer */
+.add.comment.div {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
 
 /* Change button background color on hover */
 .ui.right.aligned.button:hover,

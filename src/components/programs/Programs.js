@@ -12,7 +12,7 @@ const Programs = (props) => {
       <div>
         <div className='add btn div'>
           <Popup
-            trigger={<Button icon='plus' as={Link} to='/programs/new' />}
+            trigger={<Button icon='comment outline' as={Link} to='/programs/:id/comments/new' />}
             content="Add more shows."
             size='tiny'
             />
@@ -22,13 +22,6 @@ const Programs = (props) => {
               {props.programs && props.programs.map((program) => <Program key={program.name} program={program} match={props.match}/>)}
             </Grid.Row>
         </Grid>
-        <div>
-        <Popup
-          trigger={<Button icon='plus' as={Link} to='/programs/:id/comments/new' />}
-          content='Add a comment.'
-          size='tiny'
-         />
-        </div>
     </div>
   )
 }
