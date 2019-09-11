@@ -37,11 +37,14 @@ export default function programReducer(state = {programs: []}, action){
       // console.log('stringifiedPrograms: ', stringifiedPrograms)
 
       let copyOfPrograms = JSON.parse(stringifiedPrograms)
-      // console.log('copyOfPrograms: ', copyOfPrograms)
+      //JSON.parse() returns an object
+      // console.log('copyOfPrograms.programs: ', copyOfPrograms.programs)
 
       //this updated code using .findIndex allowed me to manually change the watchlist boolean value fixed the issue I had in Program.js which only let me update the item 1x vs each time the button was clicked.
-      let programIndex = copyOfPrograms.findIndex(program => program.id === action.id)
-      copyOfPrograms[programIndex].watchlist = !copyOfPrograms[programIndex].watchlist
+      let programIndex = copyOfPrograms.programs.findIndex(program => program.id === action.id)
+
+      copyOfPrograms.programs[programIndex].watchlist = !copyOfPrograms.programs[programIndex].watchlist
+
       // console.log('copyOfPrograms after toggle switcheroo: ', copyOfPrograms)
 
       //commented out the code below because I decided to use findIndex. In the code below, I was finding an object which I toggled the watchlist value of, but it did noupdate that value each time the toggle was clicked, just the one time.
@@ -52,7 +55,7 @@ export default function programReducer(state = {programs: []}, action){
       return copyOfPrograms
 
     case 'ADD_COMMENT':
-      return {}
+      return {...state, programs: [...state.programs, action.payload]}
 
     default:
     return state

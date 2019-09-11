@@ -30,7 +30,6 @@ componentDidMount(){
           <Route path='/programs/:id' render={(routerProps) => <Program {...routerProps} programs={this.props.programs}/>}/>
           <Route exact path='/programs/:id/comments' render={(routerProps) => <Program {...routerProps} program={this.props.program}/>}/>
           <Route path='/programs/:id/comments/new' render={(routerProps) => <CommentInput {...routerProps} /> } />
-          <Route exact path='/watchlist' render={(routerProps) => <Program {...routerProps} programs={this.props.programs} />} />
         </Switch>
       </div>
     )

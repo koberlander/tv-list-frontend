@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import {Popup, Button, Comment} from 'semantic-ui-react'
 
 const Comments = (props) => {
-  console.log('props :', props);
+  // console.log('props :', props);
   return(
     <Fragment>
       <div className='add comment div'>

@@ -1,6 +1,7 @@
 
 export const addComment = (comment, programId) => {
-
+// console.log('comment: ', comment);
+// console.log('programId: ', programId);
   /*
   In my backend 'create' method for a comment, after the comment is saved I return the program
   since the comments are nested as program.comments.
@@ -8,10 +9,11 @@ export const addComment = (comment, programId) => {
   in the Redux CRUD lab.
 
   */
+  // debugger
 
   return (dispatch) => {
 
-    fetch(`http://localhost:3001/api/v1/programs/${programId}/comments`, {
+    fetch(`http://localhost:3000/api/v1/programs/${programId}/comments`, {
       method: 'POST',
       headers: ({
         'Content-Type': 'application/json',
