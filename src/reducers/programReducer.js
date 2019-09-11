@@ -23,12 +23,12 @@ export default function programReducer(state = {programs: []}, action){
       return {...state, programs}
 
     case 'TOGGLE_WATCHLIST':
-
+    //NEED TO REFACTOR WITH SPREAD OPERATOR
       /*
           Make a deep copy of the current state by using JSON.stringify to turn my array of programs into a string.
-          After creating stringifiedPrograms, we then use JSON.parse to turn it back into a brand new array of objects.
-          Then, take the copyOfPrograms and find the specific program that we want to update (here we find it by id).
-          After isolating that program, we update the value of watchlist so that each time the button is clicked, it will change the watchlist value.
+          After creating stringifiedPrograms, use JSON.parse to turn it back into a brand new array of objects.
+          Then, take the copyOfPrograms and find the specific program to update (here I find it by id).
+          After isolating that program, update the value of watchlist so that each time the button is clicked, it will change the watchlist value.
           Then, return a copy of state, with the program key set to the copyOfPrograms array of objects.
           Updating my programToBeToggled watchlist value still updates it in the copyOfPrograms array.
       */

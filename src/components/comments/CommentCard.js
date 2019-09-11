@@ -1,6 +1,8 @@
 import React, {Fragment} from 'react'
 import {Comment, Header} from 'semantic-ui-react'
 
+// import randomAvatar from './actions/comments/randomAvatar'
+
 const CommentCard = (props) => {
 
 
