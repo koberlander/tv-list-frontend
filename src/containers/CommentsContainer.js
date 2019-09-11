@@ -4,6 +4,7 @@ import CommentInput from '../components/comments/CommentInput'
 
 class CommentsContainer extends React.Component {
   render(){
+    console.log('this.props.program: ', this.props.program);
     return(
       <Fragment>
         <Comments comments={this.props.program && this.props.program.comments}/>

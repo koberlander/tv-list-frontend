@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import addComment from '../../actions/comments/addComment'
+import {addComment} from '../../actions/comments/addComment'
 
 import {Form, Button} from 'semantic-ui-react'
 
@@ -31,7 +31,8 @@ class CommentInput extends React.Component {
 
     render(){
       return(
-        <Form className='comment' onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
+          <h3>Add a Comment</h3>
           <Form.Input
             type='text'
             label='Name'

@@ -7,16 +7,6 @@ import CommentsContainer from '../../containers/CommentsContainer'
 
 class Program extends React.Component {
 
-  renderCards = () => {
-    //write a func with cards ternaries here
-    // let program = this.props.program ? this.props.program : this.props.programs[this.props.match.params.id - 1]
-    // let programId = this.props.program ? this.props.program.id : null
-    // let watchlistValue = this.props.program ? this.props.program.watchlist : null
-
-    //call func in render below
-    // {this.renderCards()}
-  }
-
   handleDelete = (programId) => {
 
     this.props.deleteProgram(programId)
@@ -31,11 +21,11 @@ class Program extends React.Component {
 
 
     render(){
-      // console.log(this.props)
+      // console.log('this.props.match.url :', this.props.match.url)
 
       // debugger
 
-      let program = this.props.program ? this.props.program : this.props.programs.find(program => parseInt(program.id) === parseInt(this.props.match.params.id))
+      let program = this.props.program? this.props.program : this.props.programs.find(program => parseInt(program.id) === parseInt(this.props.match.params.id))
 
       let programId = program ? program.id : ''
 

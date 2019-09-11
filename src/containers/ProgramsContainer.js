@@ -1,8 +1,8 @@
 import React from 'react'
 import Programs from '../components/programs/Programs'
 import ProgramInput from '../components/programs/ProgramInput'
-// import Watchlist from '../components/Watchlist'
 import Program from '../components/programs/Program'
+import CommentInput from '../components/comments/CommentInput'
 import {connect} from 'react-redux'
 import {fetchPrograms} from '../actions/programs/fetchPrograms'
 import {Route, Switch} from 'react-router-dom'
@@ -29,6 +29,7 @@ componentDidMount(){
           <Route path='/programs/new' render={(routerProps) => <ProgramInput {...routerProps}/>}/>
           <Route path='/programs/:id' render={(routerProps) => <Program {...routerProps} programs={this.props.programs}/>}/>
           <Route exact path='/programs/:id/comments' render={(routerProps) => <Program {...routerProps} program={this.props.program}/>}/>
+          <Route path='/programs/:id/comments/new' render={(routerProps) => <CommentInput {...routerProps} /> } />
           <Route exact path='/watchlist' render={(routerProps) => <Program {...routerProps} programs={this.props.programs} />} />
         </Switch>
       </div>

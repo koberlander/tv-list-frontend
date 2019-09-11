@@ -3,6 +3,7 @@ import {Comment, Header} from 'semantic-ui-react'
 
 const CommentCard = (props) => {
 
+
     return(
       <Fragment>
         <Header as='h3' dividing>
@@ -12,13 +13,13 @@ const CommentCard = (props) => {
         <Comment>
           <Comment.Avatar src='https://emojis.slackmojis.com/emojis/images/1450319455/129/hypnotoad.gif?1450319455' />
           <Comment.Content>
-            <Comment.Author as='a'>Alex</Comment.Author>
+            <Comment.Author as='a'>{props.comment.author}</Comment.Author>
             <Comment.Metadata>
               <div>Today at 12:00 PM</div>
             </Comment.Metadata>
-            <Comment.Text>This show is great!</Comment.Text>
-            <Comment.Actions>
-
+            <Comment.Text>{props.comment.text}</Comment.Text>
+            <Comment.Actions as='div'>
+              <Comment.Action as='a'>Delete</Comment.Action>
             </Comment.Actions>
           </Comment.Content>
         </Comment>
