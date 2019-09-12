@@ -30,7 +30,7 @@ const NavBar = () => {
                 className='item 3'
                 as={Link}
                 to='/programs/new'>
-                 Add New
+                 Add New Show
                </Menu.Item>
 
                <Menu.Item

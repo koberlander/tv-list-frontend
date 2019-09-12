@@ -2,7 +2,7 @@ import React, {Fragment} from 'react'
 import CommentCard from './CommentCard'
 import {Link} from 'react-router-dom'
 
-import {Popup, Button, Comment} from 'semantic-ui-react'
+import {Popup, Button, Comment, Header} from 'semantic-ui-react'
 
 const Comments = (props) => {
   // console.log('props :', props);
@@ -15,6 +15,10 @@ const Comments = (props) => {
           size='tiny'
           />
       </div>
+
+      <Header as='h3' dividing>
+        Comments
+      </Header>
 
         <Comment.Group>
           {props.comments && props.comments.map(comment => <CommentCard key={comment.id} comment={comment}/>)}

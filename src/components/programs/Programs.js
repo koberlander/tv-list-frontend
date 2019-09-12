@@ -1,6 +1,9 @@
 import React from 'react'
 import Program from './Program'
-import {Grid, Button, Popup} from 'semantic-ui-react'
+import filterOptions from './filterOptions'
+
+import {Grid, Button, Popup, Header, Icon, Dropdown} from 'semantic-ui-react'
+
 import {Link} from 'react-router-dom'
 
 
@@ -18,6 +21,20 @@ const Programs = (props) => {
             size='tiny'
             />
         </div>
+
+        <Header as='h6'>
+          <Icon  />
+          Filter
+            <Header.Content>
+                <Dropdown
+                  inline
+                  header='Choose one'
+                  options={filterOptions}
+                  defaultValue={filterOptions[0].value}
+                />
+            </Header.Content>
+        </Header>
+
         <Grid columns='six' divided='vertically'>
             <Grid.Row >
               {props.programs && props.programs.map((program) => <Program key={program.name} program={program} match={props.match}/>)}

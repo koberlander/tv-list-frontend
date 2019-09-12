@@ -55,7 +55,17 @@ export default function programReducer(state = {programs: []}, action){
       return copyOfPrograms
 
     case 'ADD_COMMENT':
-      return {...state, programs: [...state.programs, action.payload]}
+    //iterate through my state to find the id that matches the updated program. When found, return that updated program. Otherwise, do nothing but display nonmatching programs.
+      let programsWithNewComment = state.programs.map(program => {
+        if (program.id === action.payload.id) {
+          return action.payload
+          }
+          else {
+            return program
+          }
+        })
+
+      return {...state, programs: programsWithNewComment }
 
     default:
     return state

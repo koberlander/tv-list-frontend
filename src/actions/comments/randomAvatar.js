@@ -1,4 +1,4 @@
-export const randomAvatar = () => {
+
   const avatars = [
     {
       name: 'cool doge',
@@ -17,8 +17,11 @@ export const randomAvatar = () => {
       image: 'https://emojis.slackmojis.com/emojis/images/1450319455/129/hypnotoad.gif?1450319455'
     },
   ]
-    // min is 0
-    const max = avatars.length;
 
-    return avatars[Math.floor(Math.random() * max)].image
+
+export const randomAvatar = () => {
+  const max = avatars.length;
+
+  return avatars[Math.floor(Math.random() * max)].image
+
 }

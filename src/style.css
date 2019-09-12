@@ -54,10 +54,10 @@ html, body {
 }
 
 /* Change button background color on hover */
-.ui.right.aligned.button:hover,
+/* .ui.right.aligned.button:hover,
 .ui.button:hover {
   background: rgb(255, 183, 51) !important;
-}
+} */
 
 /* Footer background color */
 .footer {
