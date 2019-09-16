@@ -11,7 +11,6 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import App from './App'
 
 import programReducer from './reducers/programReducer'
-// import commentReducer from './reducers/commentReducer'
 
 //Compose allows me to combine more than one middleware.
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

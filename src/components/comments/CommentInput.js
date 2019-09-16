@@ -69,12 +69,3 @@ class CommentInput extends React.Component {
 
 
 export default connect(null, {addComment})(CommentInput)
-
-
-// <Dropdown
-//   placeholder='Choose an Avatar'
-//   clearable
-//   selection
-//   options={Emojis}
-//   width={6}
-// />

@@ -1,8 +1,7 @@
 import React from 'react'
 import Program from './Program'
-import filterOptions from './filterOptions'
 
-import {Grid, Button, Popup, Header, Icon, Dropdown} from 'semantic-ui-react'
+import {Grid, Button, Popup} from 'semantic-ui-react'
 
 import {Link} from 'react-router-dom'
 
@@ -15,25 +14,25 @@ const Programs = (props) => {
   return(
       <div>
         <div className='add btn div'>
+        <Button.Group float='right'>
           <Popup
             trigger={<Button icon='plus' as={Link} to='/programs/new' />}
             content="Add more shows."
             size='tiny'
             />
+            <Popup
+            trigger={<Button float='right' icon='sort alphabet down' as={Link} to='/programs/new' />}
+            content="Sort by title."
+            size='tiny'
+            />
+            <Popup
+            trigger={<Button float='right' icon='filter' as={Link} to='/programs/new' />}
+            content="Watchlist only."
+            size='tiny'
+            />
+            </Button.Group>
         </div>
 
-        <Header as='h6'>
-          <Icon  />
-          Filter
-            <Header.Content>
-                <Dropdown
-                  inline
-                  header='Choose one'
-                  options={filterOptions}
-                  defaultValue={filterOptions[0].value}
-                />
-            </Header.Content>
-        </Header>
 
         <Grid columns='six' divided='vertically'>
             <Grid.Row >

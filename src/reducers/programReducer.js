@@ -1,7 +1,7 @@
 
 export default function programReducer(state = {programs: []}, action){
 //this takes the action object we have dispatched and updates the state in some way
-// debugger
+debugger
 
   switch (action.type) {
 
@@ -66,6 +66,10 @@ export default function programReducer(state = {programs: []}, action){
         })
 
       return {...state, programs: programsWithNewComment }
+
+    case 'DELETE_COMMENT':
+      let programsWithoutComment = state.programs.filter(program => program.comments.id !== action.payload.comments.id)
+      return {...state, programs: programsWithoutComment }
 
     default:
     return state

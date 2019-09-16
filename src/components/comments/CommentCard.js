@@ -1,10 +1,14 @@
 import React, {Fragment} from 'react'
-import {Comment} from 'semantic-ui-react'
+import {connect} from 'react-redux'
+import {deleteComment} from '../../actions/comments/deleteComment'
 
-// import randomAvatar from './actions/comments/randomAvatar'
+import {Comment, Button} from 'semantic-ui-react'
+
 
 const CommentCard = (props) => {
 // debugger
+
+
 
     return(
       <Fragment>
@@ -14,12 +18,15 @@ const CommentCard = (props) => {
           <Comment.Content>
             <Comment.Author as='a'>{props.comment.author}</Comment.Author>
             <Comment.Metadata>
-              The one and only!
+
             </Comment.Metadata>
             <Comment.Text>{props.comment.text}</Comment.Text>
-            <Comment.Actions as='div'>
-              <Comment.Action as='a'>Delete</Comment.Action>
-            </Comment.Actions>
+            <Button
+              icon='trash'
+              size='mini'
+              basic
+              onClick={props.deleteComment(props.comment.id, props.comment.program_id)}
+              />
           </Comment.Content>
         </Comment>
 
@@ -27,12 +34,4 @@ const CommentCard = (props) => {
     )
 }
 
-export default CommentCard
-
-// let magic = () => {
-//   Date.now()
-// }
-// function prettyDate2(magic) {
-//     let dateWithoutSecond = new Date();
-//     dateWithoutSecond.toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
-// }
+export default connect(null, {deleteComment})(CommentCard)
