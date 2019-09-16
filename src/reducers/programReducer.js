@@ -1,7 +1,7 @@
 
 export default function programReducer(state = {programs: []}, action){
 //this takes the action object we have dispatched and updates the state in some way
-debugger
+// debugger
 
   switch (action.type) {
 
@@ -55,6 +55,7 @@ debugger
       return copyOfPrograms
 
     case 'ADD_COMMENT':
+    case 'DELETE_COMMENT':
     //iterate through my state to find the id that matches the updated program. When found, return that updated program. Otherwise, do nothing but display nonmatching programs.
       let programsWithNewComment = state.programs.map(program => {
         if (program.id === action.payload.id) {
@@ -67,9 +68,6 @@ debugger
 
       return {...state, programs: programsWithNewComment }
 
-    case 'DELETE_COMMENT':
-      let programsWithoutComment = state.programs.filter(program => program.comments.id !== action.payload.comments.id)
-      return {...state, programs: programsWithoutComment }
 
     default:
     return state

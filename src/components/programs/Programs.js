@@ -21,11 +21,6 @@ const Programs = (props) => {
             size='tiny'
             />
             <Popup
-            trigger={<Button float='right' icon='sort alphabet down' as={Link} to='/programs/new' />}
-            content="Sort by title."
-            size='tiny'
-            />
-            <Popup
             trigger={<Button float='right' icon='filter' as={Link} to='/programs/new' />}
             content="Watchlist only."
             size='tiny'
@@ -44,3 +39,9 @@ const Programs = (props) => {
 }
 
 export default Programs
+
+// <Popup
+// trigger={<Button float='right' icon='sort alphabet down' as={Link} to='/programs/new' />}
+// content="Sort by title."
+// size='tiny'
+// />

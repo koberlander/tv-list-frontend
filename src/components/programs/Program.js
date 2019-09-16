@@ -21,7 +21,7 @@ class Program extends React.Component {
 
 
     render(){
-      // console.log('this.props.match.url :', this.props.match.url)
+      // console.log('this.props :', this.props)
 
       // debugger
 

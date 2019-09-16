@@ -25,7 +25,7 @@ const CommentCard = (props) => {
               icon='trash'
               size='mini'
               basic
-              onClick={props.deleteComment(props.comment.id, props.comment.program_id)}
+              onClick={() => props.deleteComment(props.comment.id, props.comment.program_id)}
               />
           </Comment.Content>
         </Comment>
