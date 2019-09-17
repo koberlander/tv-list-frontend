@@ -21,7 +21,7 @@ const Programs = (props) => {
             size='tiny'
             />
             <Popup
-            trigger={<Button float='right' icon='filter' as={Link} to='/programs/new' />}
+            trigger={<Button float='right' icon='filter' as={Link} to='/watchlist' />}
             content="Watchlist only."
             size='tiny'
             />

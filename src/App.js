@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import NavBar from './containers/NavBar'
 import ProgramsContainer from './containers/ProgramsContainer'
+// import WatchlistContainer from './containers/WatchlistContainer'
 import Footer from './components/Footer'
 
 class App extends Component{
@@ -11,6 +12,7 @@ class App extends Component{
       <div className="App">
         <NavBar />
         <ProgramsContainer />
+
         <Footer />
       </div>
     )
