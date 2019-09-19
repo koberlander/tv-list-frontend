@@ -7,8 +7,8 @@ class CommentsContainer extends React.Component {
     // console.log('this.props.program: ', this.props.program);
     return(
       <Fragment>
-        <Comments comments={this.props.program && this.props.program.comments}/>
-        <CommentInput program={this.props.program}/>
+        <Comments comments={this.props.program && this.props.program.comments} isCommentButtonClicked={this.props.isCommentButtonClicked}/>
+        <CommentInput program={this.props.program} isCommentButtonClicked={this.props.isCommentButtonClicked}/>
       </Fragment>
     )
   }

@@ -30,13 +30,11 @@ class CommentInput extends React.Component {
   }
 
     render(){
-      // if(!onClick){
-      //   render null
-      // }
-
-
+      // console.log(this.props);
+      // debugger
       return(
-        <Form onSubmit={this.handleSubmit}>
+
+  <Form onSubmit={this.handleSubmit}>
           <h3>Add a Comment</h3>
           <Form.Input
             type='text'
@@ -69,8 +67,6 @@ class CommentInput extends React.Component {
       )
     }
   }
-
-
 
 
 export default connect(null, {addComment})(CommentInput)

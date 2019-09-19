@@ -1,10 +1,13 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useState} from 'react'
 import CommentCard from './CommentCard'
 
 import {Comment, Header, Popup, Button} from 'semantic-ui-react'
 
 const Comments = (props) => {
-  // console.log('props :', props);
+  console.log('Comments props :', props);
+
+  const [isCommentButtonClicked, handleCommentButtonClick] = useState(null)
+
   return(
     <Fragment>
 
@@ -21,6 +24,7 @@ const Comments = (props) => {
             trigger={<Button icon='comment outline' />}
             content="Add a comment."
             size='tiny'
+            onClick={() => handleCommentButtonClick(!isCommentButtonClicked)}
             />
         </div>
 

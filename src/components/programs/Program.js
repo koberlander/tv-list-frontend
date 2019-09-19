@@ -7,6 +7,14 @@ import CommentsContainer from '../../containers/CommentsContainer'
 
 class Program extends React.Component {
 
+  constructor(){
+    super()
+
+    this.state = {
+      isCommentButtonClicked: false
+    }
+
+  }
 
   handleDelete = (programId) => {
 
@@ -62,7 +70,8 @@ class Program extends React.Component {
                               <Button
                                 toggle
                                 active={watchlistValue}
-                                onClick={(_) => this.handleWatchlist(programId, watchlistValue)} icon='heart'
+                                onClick={(_) => this.handleWatchlist(programId, watchlistValue)}
+                                icon='heart'
                               />}
                             content="Add to Watchlist."
                             size='tiny'
@@ -73,11 +82,13 @@ class Program extends React.Component {
                   </Grid.Column>
 
 
-          {this.props.match.url !== '/programs' && this.props.match.url !== '/' && this.props.match.url !== '/watchlist' ? <CommentsContainer program={program} /> : null}
+          {this.props.match.url !== '/programs' && this.props.match.url !== '/' && this.props.match.url !== '/watchlist' ? <CommentsContainer program={program} isCommentButtonClicked={this.state.isCommentButtonClicked}/> : null}
 
         </Fragment>
       )
     }
+
+
 }
 
 export default connect(null, {deleteProgram, toggleWatchlist})(Program)
