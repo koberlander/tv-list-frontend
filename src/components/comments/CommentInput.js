@@ -30,6 +30,11 @@ class CommentInput extends React.Component {
   }
 
     render(){
+      // if(!onClick){
+      //   render null
+      // }
+
+
       return(
         <Form onSubmit={this.handleSubmit}>
           <h3>Add a Comment</h3>

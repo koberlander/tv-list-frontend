@@ -7,6 +7,7 @@ import CommentsContainer from '../../containers/CommentsContainer'
 
 class Program extends React.Component {
 
+
   handleDelete = (programId) => {
 
     this.props.deleteProgram(programId)
@@ -21,9 +22,7 @@ class Program extends React.Component {
 
 
     render(){
-      // console.log('this.props :', this.props)
-
-      // debugger
+    // console.log('this.props.match.path: ', this.props.match.path);
 
       let program = this.props.program? this.props.program : this.props.programs.find(program => parseInt(program.id) === parseInt(this.props.match.params.id))
 
@@ -35,44 +34,46 @@ class Program extends React.Component {
          2) Implemented a ternary for CommentsContainer that checked routerProps (this.props.match specifically) since the it was rendering comments on the '/programs' and '/' routes */
 
       return(
-        <Fragment>
-          <Grid.Column>
-            <Card as='div'>
-              <Image src={program ? program.image : null} wrapped ui={false} />
-              <Card.Content>
-                <Card.Header>{program ? program.name: null}</Card.Header>
-                <Card.Meta>
-                  <span>{program ? program.network : null}</span>
-                </Card.Meta>
-                <Card.Description as='a' href={`/programs/${programId}`}>
+              <Fragment>
 
-                    More...
+                  <Grid.Column>
+                    <Card as='div'>
+                      <Image src={program ? program.image : null} wrapped ui={false} />
+                      <Card.Content>
+                        <Card.Header>{program ? program.name: null}</Card.Header>
+                        <Card.Meta>
+                          <span>{program ? program.network : null}</span>
+                        </Card.Meta>
+                        <Card.Description as='a' href={`/programs/${programId}`}>
 
-                </Card.Description>
-              </Card.Content>
-              <Card.Content extra>
-                <div className='ui two buttons'>
-                  <Popup
-                    trigger={<Button onClick={(_) => {this.handleDelete(programId)}} icon='trash' />}
-                    content="Delete this show."
-                    size='tiny'
-                  />
-                  <Popup
-                    trigger={
-                      <Button
-                        toggle
-                        active={watchlistValue}
-                        onClick={(_) => this.handleWatchlist(programId, watchlistValue)} icon='heart'
-                      />}
-                    content="Add to Watchlist."
-                    size='tiny'
-                  />
-                </div>
-              </Card.Content>
-            </Card>
-          </Grid.Column>
+                            More...
 
-          {this.props.match.url !== '/programs' && this.props.match.url !== '/' && this.props.match.url !== '/watchlist'? <CommentsContainer program={program} /> : null}
+                        </Card.Description>
+                      </Card.Content>
+                      <Card.Content extra>
+                        <div className='ui two buttons'>
+                          <Popup
+                            trigger={<Button onClick={(_) => {this.handleDelete(programId)}} icon='trash' />}
+                            content="Delete this show."
+                            size='tiny'
+                          />
+                          <Popup
+                            trigger={
+                              <Button
+                                toggle
+                                active={watchlistValue}
+                                onClick={(_) => this.handleWatchlist(programId, watchlistValue)} icon='heart'
+                              />}
+                            content="Add to Watchlist."
+                            size='tiny'
+                          />
+                        </div>
+                      </Card.Content>
+                    </Card>
+                  </Grid.Column>
+
+
+          {this.props.match.url !== '/programs' && this.props.match.url !== '/' && this.props.match.url !== '/watchlist' ? <CommentsContainer program={program} /> : null}
 
         </Fragment>
       )

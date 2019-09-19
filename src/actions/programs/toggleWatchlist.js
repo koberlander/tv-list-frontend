@@ -18,7 +18,7 @@ export function toggleWatchlist(programId, watchlistValue){
       })
     })
     .then(res => res.json())
-    .then(res => dispatch({type: 'TOGGLE_WATCHLIST', id: programId}))
+    .then(program => dispatch({type: 'TOGGLE_WATCHLIST', payload: program}))
 
   }
 }

@@ -1,5 +1,7 @@
 import React from 'react'
 import Program from './Program'
+import {connect} from 'react-redux'
+import handleTitleSort from '../../actions/programs/handleTitleSort'
 
 import {Grid, Button, Popup} from 'semantic-ui-react'
 
@@ -21,11 +23,16 @@ const Programs = (props) => {
             size='tiny'
             />
             <Popup
-            trigger={<Button float='right' icon='filter' as={Link} to='/watchlist' />}
+            trigger={<Button icon='filter' as={Link} to='/watchlist' />}
             content="Watchlist only."
             size='tiny'
             />
-            </Button.Group>
+            <Popup
+            trigger={<Button icon='sort alphabet down' onClick={() => props.handleTitleSort}/>}
+            content="Sort by Title."
+            size='tiny'
+            />
+        </Button.Group>
         </div>
 
 
@@ -38,10 +45,4 @@ const Programs = (props) => {
   )
 }
 
-export default Programs
-
-// <Popup
-// trigger={<Button float='right' icon='sort alphabet down' as={Link} to='/programs/new' />}
-// content="Sort by title."
-// size='tiny'
-// />
+export default connect(null, {handleTitleSort})(Programs)
