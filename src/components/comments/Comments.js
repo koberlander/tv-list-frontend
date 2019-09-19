@@ -1,35 +1,33 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment} from 'react'
 import CommentCard from './CommentCard'
-
 import {Comment, Header, Popup, Button} from 'semantic-ui-react'
 
-const Comments = (props) => {
-  console.log('Comments props :', props);
+class Comments extends React.Component {
 
-  const [isCommentButtonClicked, handleCommentButtonClick] = useState(null)
+  render(){
+    // console.log('isCommentButtonClicked: ', this.props.isCommentButtonClicked)
+    return(
+      <Fragment>
 
-  return(
-    <Fragment>
+        <Header as='h3' dividing>
+          Comments
+        </Header>
 
-      <Header as='h3' dividing>
-        Comments
-      </Header>
+          <Comment.Group>
+            {this.props.comments && this.props.comments.map(comment => <CommentCard key={comment.id} comment={comment}/>)}
+          </Comment.Group>
 
-        <Comment.Group>
-          {props.comments && props.comments.map(comment => <CommentCard key={comment.id} comment={comment}/>)}
-        </Comment.Group>
+          <div className='add comment div'>
+            <Popup
+              trigger={<Button icon='comment outline' onClick={(_) => this.props.buttonFunction(this.props.isCommentButtonClicked)} />}
+              content="Add a comment."
+              size='tiny'
+              />
+          </div>
 
-        <div className='add comment div'>
-          <Popup
-            trigger={<Button icon='comment outline' />}
-            content="Add a comment."
-            size='tiny'
-            onClick={() => handleCommentButtonClick(!isCommentButtonClicked)}
-            />
-        </div>
-
-    </Fragment>
-  )
+      </Fragment>
+    )
+  }
 }
 
 export default Comments

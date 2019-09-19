@@ -82,7 +82,7 @@ class Program extends React.Component {
                   </Grid.Column>
 
 
-          {this.props.match.url !== '/programs' && this.props.match.url !== '/' && this.props.match.url !== '/watchlist' ? <CommentsContainer program={program} isCommentButtonClicked={this.state.isCommentButtonClicked}/> : null}
+          {this.props.match.url !== '/programs' && this.props.match.url !== '/' && this.props.match.url !== '/watchlist' ? <CommentsContainer program={program} /> : null}
 
         </Fragment>
       )
