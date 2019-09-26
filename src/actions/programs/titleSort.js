@@ -11,26 +11,52 @@
 function handleTitleSwap(programs, firstIndex, secondIndex){
 
   // STEP 3 - SET THE TITLE OF THE FIRST PROGRAM IN ARRAY TO FIRST VALUE
-  const firstValue = programs[firstIndex].title
+  const firstValue = programs[firstIndex].name
   console.log('original value of firstIndex: ', firstValue)
 
 
   // STEP 4 - CHANGE VALUE OF programs[firstValue] TO secondIndex IN ORDER TO COMPARE IT WITH A NEW ITEM IN MY PROGRAMS ARRAY
-  programs[firstValue] = programs[secondIndex]
+  programs[firstValue] = programs[secondIndex].name
   console.log('new value of firstIndex: ', programs[firstValue])
 
   // STEP 5: UPDATE THE SECOND SWAP LOCATION WITH THE VALUE OF FIRST VALUE
 
-  programs[secondIndex] = firstValue
+  programs[secondIndex].name = firstValue
   console.log('new value of secondIndex: ', programs[secondIndex])
 }
 
 /*
 
-To Finish This Section, Visit The Learn Instruct Video Here: https://www.youtube.com/watch?v=ITIiVC7gGNI&feature=youtu.be&t=1205
+To Finish This Section, Visit The Learn Instruct Video Here: https://youtu.be/ITIiVC7gGNI?t=1684
 
 
-  HOW I CREATED THIS SELECTION SORT METHOD
-    1. Find the title with the lowest value -- A, B, C, etc. each have numerical values.
+  HOW I CREATED THIS findIndexOfMin METHOD
+    1. Find the title letter with the lowest value and swap it with the first item in the array (located at index[0]).
+       - array is programs
+       - item is the program that has the title Barry at index[14]
+       - return the index of the smallest value
+    2. Find the title letter with the second lowest value in the array and swap it with the item at index[1].
+       - array is programs, but it's faster to check out a subarray with every title but Barry.
+       - instead of making a copy and shifting off Barry from front, I'll pass in entire array but give it a starting point
+    3. Find the title letter with the third lowest value in the array and swap it with the item at index[2].
+    3. Keep repeating until the entire array is sorted (aka until you hit array.length).
 
 */
+// alice@flatironschool.com
+
+const findIndexOfMin = (programs, startingPoint) => {
+  let minValue = programs[startingPoint]
+  let minIndex = startingPoint
+  let arrayLength = programs.length
+
+  for (var i = startingPoint + 1; i < arrayLength; i++) {
+
+    if (programs[i].title < minValue) {
+      minValue = programs[i]
+      console.log("Changing minValue to equal ", programs[i]);
+      minIndex = i
+    }
+  }
+}
+//
+// findIndexOfMin()

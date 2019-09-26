@@ -17,7 +17,7 @@ class Program extends React.Component {
   }
 
   handleDelete = (programId) => {
-
+    // connect() allows us to call dispatch on the deleteProgram action and pass it an object like so dispatch({type: 'DELETE_PROGRAM', payload: programId})
     this.props.deleteProgram(programId)
   }
 
@@ -38,8 +38,10 @@ class Program extends React.Component {
 
       let watchlistValue = program ? program.watchlist : null
 
-      /* 1) Link caused nested 'a' tag error, so used 'as' on Card and Card.Description.
-         2) Implemented a ternary for CommentsContainer that checked routerProps (this.props.match specifically) since the it was rendering comments on the '/programs' and '/' routes */
+      /*
+         1) Link caused nested 'a' tag error, so used 'as' on Card and Card.Description.
+         2) Implemented a ternary for CommentsContainer that checked routerProps (this.props.match specifically) since the it was rendering comments on the '/programs' and '/' routes
+      */
 
       return(
               <Fragment>
@@ -59,7 +61,7 @@ class Program extends React.Component {
                         </Card.Description>
                       </Card.Content>
                       <Card.Content extra>
-                        <div className='ui two buttons'>
+                        <div className='ui three buttons'>
                           <Popup
                             trigger={<Button onClick={(_) => {this.handleDelete(programId)}} icon='trash' />}
                             content="Delete this show."
@@ -76,6 +78,7 @@ class Program extends React.Component {
                             content="Add to Watchlist."
                             size='tiny'
                           />
+
                         </div>
                       </Card.Content>
                     </Card>

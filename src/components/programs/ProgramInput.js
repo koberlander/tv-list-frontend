@@ -34,8 +34,8 @@ class ProgramInput extends React.Component {
 
     //call our addProgram action via props. connect() allows us to do this since we passed in our action as dispatch.
     //pass in the payload (this.state, our state takes in our form input text in real time) that we receive from the form onSubmit
-    this.props.addProgram(this.state)
 
+    this.props.addProgram(this.state)
 
     this.setState({
       name: '',
