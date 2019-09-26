@@ -8,9 +8,6 @@ import {Link} from 'react-router-dom'
 
 class Programs extends React.Component {
 
-// How does the title sort method render the change after the sort completes?
-// Add in .split, .toUpperCase, and .join to put every word in title case
-
   titleSort = () => {
     debugger
 
