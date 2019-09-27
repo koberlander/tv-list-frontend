@@ -3,6 +3,7 @@ import Programs from '../components/programs/Programs'
 import ProgramInput from '../components/programs/ProgramInput'
 import Program from '../components/programs/Program'
 import Watchlist from '../components/programs/Watchlist'
+import Sorted from '../components/programs/Sorted'
 import {connect} from 'react-redux'
 import {fetchPrograms} from '../actions/programs/fetchPrograms'
 import {Route, Switch} from 'react-router-dom'
@@ -16,24 +17,6 @@ componentDidMount(){
   this.props.fetchPrograms()
 }
 
-// handleTitleSwap(programs, firstIndex, secondIndex){
-//
-//   // STEP 3 - SET THE TITLE OF THE FIRST PROGRAM IN ARRAY TO FIRST VALUE
-//   const firstValue = programs[firstIndex].name
-//   console.log('original value of firstIndex: ', firstValue)
-//
-//
-//   // STEP 4 - CHANGE VALUE OF programs[firstValue] TO secondIndex IN ORDER TO COMPARE IT WITH A NEW ITEM IN MY PROGRAMS ARRAY
-//   programs[firstValue] = programs[secondIndex].name
-//   console.log('new value of firstIndex: ', programs[firstValue])
-//
-//   // STEP 5: UPDATE THE SECOND SWAP LOCATION WITH THE VALUE OF FIRST VALUE
-//
-//   programs[secondIndex].name = firstValue
-//   console.log('new value of secondIndex: ', programs[secondIndex])
-// }
-
-// handleTitleSwap(programs, 0, 1)
 
 /* Route component renders something as-is. Router can pass down props via routerProps the render method. Render also lets me do a show page for X item, hide a list of all items. Since I have both /programs and programs/:id routes, I used Switch to avoid confusion and double component rendering. Switch finds the first route that matches my URL. The double renderings occurred because when using 'exact path' with a URL, it returns everything that matches. I pass in routerProps to my routes using render because, unlike the commponent=, render= does not automatically provide our components with useful props like .match or .history */
 
@@ -49,6 +32,7 @@ componentDidMount(){
           <Route path='/programs/:id' render={(routerProps) => <Program {...routerProps} programs={this.props.programs}/>}/>
           <Route path='/programs/:id/comments' render={(routerProps) => <Program {...routerProps} program={this.props.program}/>}/>
           <Route path='/watchlist' render={(routerProps) => <Watchlist {...routerProps} programs={this.props.programs}/>}/>
+          <Route path='/sorted' render={(routerProps) => <Sorted {...routerProps} programs={this.props.programs}/>}/>
         </Switch>
       </div>
     )
