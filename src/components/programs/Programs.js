@@ -21,13 +21,18 @@ class Programs extends React.Component {
                 content="Add more shows."
                 size='tiny'
                 />
-                <Popup
+              <Popup
                 trigger={<Button icon='filter' as={Link} to='/watchlist' />}
                 content="Watchlist only."
                 size='tiny'
                 />
+              <Popup
+                trigger={<Button icon='sort alphabet down' as={Link} to='/sorted' />}
+                content="Sort by Title."
+                size='tiny'
+                />
             </Button.Group>
-            <a href='/sorted'><button>Sort by Title</button></a>
+
             </div>
 
 
@@ -43,16 +48,4 @@ class Programs extends React.Component {
 
 export default Programs
 
-
-// make sure all program names are in title case
-// let titleCasePrograms = this.props.programs.map(program => program.name.split(' ')
-//
-//             .map(w => {
-  // 		        if(w.substring.length > 1){
-    //               return w[0].toUpperCase() + w.substring(1).toLowerCase().join(' ')
-    //
-    //               } else{
-      //                 return w[0].toUpperCase() + w.substring(1).toUpperCase()
-      //                 }
-      //               })
-      //             )
+// <a href='/sorted'><button>Sort by Title</button></a>
