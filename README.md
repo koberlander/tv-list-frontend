@@ -1,6 +1,6 @@
 # README
 
-![](Tv List Home.gif)
+![tv-list-home](/tv-list-home.gif)
 
 ##TV List##
 
