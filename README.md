@@ -10,3 +10,5 @@ This app keeps track of tv programs all in one place. It allows the user to crea
 It uses React/Redux, as well as Semantic UI React for styling.
 
 The backend is a Rails API. See that repository [here](https://github.com/koberlander/tv-list-backend).
+
+For a complete demo, click [here](https://youtu.be/lpzzh59zwMw).
